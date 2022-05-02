@@ -20,3 +20,5 @@ C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\refint\Projet.dll
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.pdb
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.genruntimeconfig.cache
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\ref\Projet.dll
+C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.Menu.resources
+C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.gestion_voiture.resources

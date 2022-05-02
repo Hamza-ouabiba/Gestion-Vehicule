@@ -49,6 +49,7 @@ Partial Class Inscription
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader()
+        Me.erreur = New System.Windows.Forms.Label()
         Me.Panel6.SuspendLayout()
         CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +61,7 @@ Partial Class Inscription
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.erreur)
         Me.Panel6.Controls.Add(Me.sexe)
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.initialiser)
@@ -89,9 +91,9 @@ Partial Class Inscription
         '
         Me.sexe.FormattingEnabled = True
         Me.sexe.Items.AddRange(New Object() {"Masculin", "Feminin", "Autre"})
-        Me.sexe.Location = New System.Drawing.Point(237, 254)
+        Me.sexe.Location = New System.Drawing.Point(236, 257)
         Me.sexe.Name = "sexe"
-        Me.sexe.Size = New System.Drawing.Size(223, 28)
+        Me.sexe.Size = New System.Drawing.Size(236, 28)
         Me.sexe.TabIndex = 51
         '
         'Label3
@@ -100,7 +102,7 @@ Partial Class Inscription
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(169, 258)
+        Me.Label3.Location = New System.Drawing.Point(163, 261)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 18)
         Me.Label3.TabIndex = 50
@@ -143,10 +145,9 @@ Partial Class Inscription
         Me.mdp2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mdp2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.mdp2.Location = New System.Drawing.Point(148, 464)
-        Me.mdp2.Multiline = True
         Me.mdp2.Name = "mdp2"
         Me.mdp2.PlaceholderText = "Confimation Mot de Passe"
-        Me.mdp2.Size = New System.Drawing.Size(324, 36)
+        Me.mdp2.Size = New System.Drawing.Size(324, 21)
         Me.mdp2.TabIndex = 46
         Me.mdp2.UseSystemPasswordChar = True
         '
@@ -180,11 +181,10 @@ Partial Class Inscription
         Me.mdp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mdp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.mdp.Location = New System.Drawing.Point(148, 403)
-        Me.mdp.Multiline = True
         Me.mdp.Name = "mdp"
         Me.mdp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.mdp.PlaceholderText = "Mot de Passe"
-        Me.mdp.Size = New System.Drawing.Size(324, 36)
+        Me.mdp.Size = New System.Drawing.Size(324, 21)
         Me.mdp.TabIndex = 43
         Me.mdp.UseSystemPasswordChar = True
         '
@@ -376,6 +376,18 @@ Partial Class Inscription
         Me.ColumnHeader4.Text = "Date de naissance"
         Me.ColumnHeader4.Width = 200
         '
+        'erreur
+        '
+        Me.erreur.AutoSize = True
+        Me.erreur.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.erreur.ForeColor = System.Drawing.Color.Red
+        Me.erreur.Location = New System.Drawing.Point(113, 523)
+        Me.erreur.Name = "erreur"
+        Me.erreur.Size = New System.Drawing.Size(277, 22)
+        Me.erreur.TabIndex = 52
+        Me.erreur.Text = "Veuillez Entrez les champs requis"
+        Me.erreur.Visible = False
+        '
         'Inscription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -426,4 +438,5 @@ Partial Class Inscription
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents sexe As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents erreur As Label
 End Class

@@ -137,10 +137,9 @@ Partial Class Form1
         Me.Nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Nom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.Nom.Location = New System.Drawing.Point(103, 304)
-        Me.Nom.Multiline = True
         Me.Nom.Name = "Nom"
         Me.Nom.PlaceholderText = "Nom utilisateur"
-        Me.Nom.Size = New System.Drawing.Size(324, 32)
+        Me.Nom.Size = New System.Drawing.Size(324, 21)
         Me.Nom.TabIndex = 8
         '
         'mdp
@@ -150,10 +149,10 @@ Partial Class Form1
         Me.mdp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mdp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.mdp.Location = New System.Drawing.Point(103, 393)
-        Me.mdp.Multiline = True
         Me.mdp.Name = "mdp"
+        Me.mdp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.mdp.PlaceholderText = "Mot de Passe"
-        Me.mdp.Size = New System.Drawing.Size(324, 36)
+        Me.mdp.Size = New System.Drawing.Size(324, 21)
         Me.mdp.TabIndex = 9
         Me.mdp.UseSystemPasswordChar = True
         '
@@ -162,7 +161,7 @@ Partial Class Form1
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.CheckBox1.Location = New System.Drawing.Point(68, 477)
+        Me.CheckBox1.Location = New System.Drawing.Point(68, 475)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(279, 26)
         Me.CheckBox1.TabIndex = 10

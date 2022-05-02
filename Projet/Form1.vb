@@ -8,6 +8,8 @@ Public Class Form1
                 erreur.Visible = True
                 erreur.ForeColor = Color.Green
                 erreur.Text = "Connexion avec success"
+                Me.Hide()
+                Menu.Show()
             Else
                 erreur.Visible = True
                 erreur.ForeColor = Color.Red
