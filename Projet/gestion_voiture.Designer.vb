@@ -31,6 +31,11 @@ Partial Class gestion_voiture
         Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.autre_ = New System.Windows.Forms.TextBox()
+        Me.autre = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.citroen = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.peugeot = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.place = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.IconPictureBox4 = New FontAwesome.Sharp.IconPictureBox()
@@ -51,10 +56,6 @@ Partial Class gestion_voiture
         Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
-        Me.peugeot = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.citroen = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.autre = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.autre_ = New System.Windows.Forms.TextBox()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,6 +117,7 @@ Partial Class gestion_voiture
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.Button2)
         Me.Panel6.Controls.Add(Me.autre_)
         Me.Panel6.Controls.Add(Me.autre)
         Me.Panel6.Controls.Add(Me.citroen)
@@ -140,10 +142,88 @@ Partial Class gestion_voiture
         Me.Panel6.Controls.Add(Me.IconPictureBox3)
         Me.Panel6.Controls.Add(Me.Panel2)
         Me.Panel6.Controls.Add(Me.IconPictureBox2)
-        Me.Panel6.Location = New System.Drawing.Point(26, 18)
+        Me.Panel6.Location = New System.Drawing.Point(28, 18)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(610, 727)
+        Me.Panel6.Size = New System.Drawing.Size(608, 727)
         Me.Panel6.TabIndex = 31
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Red
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(3, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(136, 41)
+        Me.Button2.TabIndex = 64
+        Me.Button2.Text = "Deconnexion"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'autre_
+        '
+        Me.autre_.Location = New System.Drawing.Point(209, 361)
+        Me.autre_.Name = "autre_"
+        Me.autre_.PlaceholderText = "Autre"
+        Me.autre_.Size = New System.Drawing.Size(159, 27)
+        Me.autre_.TabIndex = 63
+        '
+        'autre
+        '
+        Me.autre.AutoSize = True
+        Me.autre.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.autre.CheckedState.BorderThickness = 0
+        Me.autre.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.autre.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.autre.CheckedState.InnerOffset = -4
+        Me.autre.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.autre.Location = New System.Drawing.Point(410, 320)
+        Me.autre.Name = "autre"
+        Me.autre.Size = New System.Drawing.Size(66, 24)
+        Me.autre.TabIndex = 62
+        Me.autre.Text = "Autre"
+        Me.autre.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.autre.UncheckedState.BorderThickness = 2
+        Me.autre.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.autre.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        '
+        'citroen
+        '
+        Me.citroen.AutoSize = True
+        Me.citroen.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.citroen.CheckedState.BorderThickness = 0
+        Me.citroen.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.citroen.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.citroen.CheckedState.InnerOffset = -4
+        Me.citroen.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.citroen.Location = New System.Drawing.Point(320, 320)
+        Me.citroen.Name = "citroen"
+        Me.citroen.Size = New System.Drawing.Size(78, 24)
+        Me.citroen.TabIndex = 61
+        Me.citroen.Text = "Citroen"
+        Me.citroen.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.citroen.UncheckedState.BorderThickness = 2
+        Me.citroen.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.citroen.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        '
+        'peugeot
+        '
+        Me.peugeot.AutoSize = True
+        Me.peugeot.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.peugeot.CheckedState.BorderThickness = 0
+        Me.peugeot.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.peugeot.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.peugeot.CheckedState.InnerOffset = -4
+        Me.peugeot.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.peugeot.Location = New System.Drawing.Point(230, 320)
+        Me.peugeot.Name = "peugeot"
+        Me.peugeot.Size = New System.Drawing.Size(84, 24)
+        Me.peugeot.TabIndex = 60
+        Me.peugeot.Text = "Peugeot"
+        Me.peugeot.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.peugeot.UncheckedState.BorderThickness = 2
+        Me.peugeot.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.peugeot.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         '
         'place
         '
@@ -343,7 +423,7 @@ Partial Class gestion_voiture
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(139, 24)
+        Me.Label1.Location = New System.Drawing.Point(138, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(334, 51)
         Me.Label1.TabIndex = 35
@@ -400,71 +480,6 @@ Partial Class gestion_voiture
         Me.IconPictureBox2.TabIndex = 29
         Me.IconPictureBox2.TabStop = False
         '
-        'peugeot
-        '
-        Me.peugeot.AutoSize = True
-        Me.peugeot.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.peugeot.CheckedState.BorderThickness = 0
-        Me.peugeot.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.peugeot.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.peugeot.CheckedState.InnerOffset = -4
-        Me.peugeot.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.peugeot.Location = New System.Drawing.Point(230, 320)
-        Me.peugeot.Name = "peugeot"
-        Me.peugeot.Size = New System.Drawing.Size(84, 24)
-        Me.peugeot.TabIndex = 60
-        Me.peugeot.Text = "Peugeot"
-        Me.peugeot.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.peugeot.UncheckedState.BorderThickness = 2
-        Me.peugeot.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.peugeot.UncheckedState.InnerColor = System.Drawing.Color.Transparent
-        '
-        'citroen
-        '
-        Me.citroen.AutoSize = True
-        Me.citroen.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.citroen.CheckedState.BorderThickness = 0
-        Me.citroen.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.citroen.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.citroen.CheckedState.InnerOffset = -4
-        Me.citroen.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.citroen.Location = New System.Drawing.Point(320, 320)
-        Me.citroen.Name = "citroen"
-        Me.citroen.Size = New System.Drawing.Size(78, 24)
-        Me.citroen.TabIndex = 61
-        Me.citroen.Text = "Citroen"
-        Me.citroen.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.citroen.UncheckedState.BorderThickness = 2
-        Me.citroen.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.citroen.UncheckedState.InnerColor = System.Drawing.Color.Transparent
-        '
-        'autre
-        '
-        Me.autre.AutoSize = True
-        Me.autre.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.autre.CheckedState.BorderThickness = 0
-        Me.autre.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.autre.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.autre.CheckedState.InnerOffset = -4
-        Me.autre.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.autre.Location = New System.Drawing.Point(410, 320)
-        Me.autre.Name = "autre"
-        Me.autre.Size = New System.Drawing.Size(66, 24)
-        Me.autre.TabIndex = 62
-        Me.autre.Text = "Autre"
-        Me.autre.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.autre.UncheckedState.BorderThickness = 2
-        Me.autre.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.autre.UncheckedState.InnerColor = System.Drawing.Color.Transparent
-        '
-        'autre_
-        '
-        Me.autre_.Location = New System.Drawing.Point(209, 361)
-        Me.autre_.Name = "autre_"
-        Me.autre_.PlaceholderText = "Autre"
-        Me.autre_.Size = New System.Drawing.Size(159, 27)
-        Me.autre_.TabIndex = 63
-        '
         'gestion_voiture
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -519,4 +534,5 @@ Partial Class gestion_voiture
     Friend WithEvents autre As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents citroen As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents peugeot As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents Button2 As Button
 End Class

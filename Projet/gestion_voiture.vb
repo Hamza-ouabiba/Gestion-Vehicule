@@ -1,43 +1,48 @@
 ﻿Public Class gestion_voiture
-    Public voiture As New LinkedList(Of Voiture)
+    Public voiture(100, 100) As Voiture
     Public compteur_voiture As Integer = 0
+    Public current_user As Integer
+    Public compteur_taille As Integer = 0
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
+
         If Nom.Text <> "" And matricule.Text <> "" And place.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
+            MsgBox(current_user)
             If peugeot.Checked = True Then
-                voiture.AddLast(New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), peugeot.Text, entree.Text, sortie.Text))
-                With ListView1.Items.Add(voiture(compteur_voiture).chauffeur)
-                    .SubItems.Add(voiture(compteur_voiture).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(voiture(compteur_voiture).nombre_place))
-                    .SubItems.Add(voiture(compteur_voiture).marque)
-                    .SubItems.Add(voiture(compteur_voiture).date_entre)
-                    .SubItems.Add(voiture(compteur_voiture).date_sortie)
+                voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), peugeot.Text, entree.Text, sortie.Text)
+                With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
+                    .SubItems.Add(voiture(current_user, compteur_voiture).marque)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
                 End With
                 emptyText()
                 compteur_voiture += 1
             ElseIf citroen.Checked = True Then
-                voiture.AddLast(New Voiture(Nom.Text, matricule.Text, place.Text, citroen.Text, entree.Text, sortie.Text))
-                With ListView1.Items.Add(voiture(compteur_voiture).chauffeur)
-                    .SubItems.Add(voiture(compteur_voiture).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(voiture(compteur_voiture).nombre_place))
-                    .SubItems.Add(voiture(compteur_voiture).marque)
-                    .SubItems.Add(voiture(compteur_voiture).date_entre)
-                    .SubItems.Add(voiture(compteur_voiture).date_sortie)
+                voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), citroen.Text, entree.Text, sortie.Text)
+                With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
+                    .SubItems.Add(voiture(current_user, compteur_voiture).marque)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
                 End With
                 emptyText()
                 compteur_voiture += 1
             Else
-                voiture.AddLast(New Voiture(Nom.Text, matricule.Text, place.Text, autre_.Text, entree.Text, sortie.Text))
-                With ListView1.Items.Add(voiture(compteur_voiture).chauffeur)
-                    .SubItems.Add(voiture(compteur_voiture).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(voiture(compteur_voiture).nombre_place))
-                    .SubItems.Add(voiture(compteur_voiture).marque)
-                    .SubItems.Add(voiture(compteur_voiture).date_entre)
-                    .SubItems.Add(voiture(compteur_voiture).date_sortie)
+                voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), autre_.Text, entree.Text, sortie.Text)
+                With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
+                    .SubItems.Add(voiture(current_user, compteur_voiture).marque)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
+                    .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
                 End With
                 emptyText()
                 compteur_voiture += 1
             End If
+            Inscription.taille_voiture(current_user) = compteur_voiture
         Else
             erreur.Visible = True
         End If
@@ -53,7 +58,18 @@
         entree.Text = ""
         sortie.Text = ""
     End Sub
-    Private Sub initialiser_Click(sender As Object, e As EventArgs) Handles initialiser.Click
+    Sub effacerContenu()
+        ListView1.Items.Clear()
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim form1 As New Form1()
+        effacerContenu()
+        compteur_voiture = 0
+        Me.Hide()
+        form1.Show()
+    End Sub
+
+    Private Sub gestion_voiture_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

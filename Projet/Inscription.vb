@@ -2,6 +2,7 @@
 Public Class Inscription
     Public user As New LinkedList(Of Utilisateur)
     Public compteur As Integer = 0
+    Public taille_voiture(12) As Integer
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
