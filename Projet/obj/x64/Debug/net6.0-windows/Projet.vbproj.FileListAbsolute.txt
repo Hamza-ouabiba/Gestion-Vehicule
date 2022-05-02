@@ -22,3 +22,5 @@ C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.genruntimeconfig.cac
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\ref\Projet.dll
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.Menu.resources
 C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.gestion_voiture.resources
+C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.Form2.resources
+C:\Projet\Projet\Projet\obj\x64\Debug\net6.0-windows\Projet.GestionCamion.resources

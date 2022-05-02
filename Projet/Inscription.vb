@@ -2,10 +2,15 @@
 Public Class Inscription
     Public user As New LinkedList(Of Utilisateur)
     Public compteur As Integer = 0
-    Public taille_voiture(12) As Integer
+    Public taille_voiture(100) As Integer
+    Public taille_camion(100) As Integer
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
+        For i As Integer = 0 To 100
+            taille_voiture(i) = 0
+            taille_camion(i) = 0
+        Next
         If Nom.Text <> "" And Email.Text <> "" And sexe.Text <> "" And mdp.Text <> "" And mdp2.Text <> "" Then
             If mdp.Text = mdp2.Text Then
                 erreur.Visible = False

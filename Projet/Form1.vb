@@ -18,6 +18,7 @@ Public Class Form1
                 Me.Hide()
                 active = 1
                 gestion_voiture.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
+                GestionCamion.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
                 menu.Show()
             Else
                 erreur.Visible = True

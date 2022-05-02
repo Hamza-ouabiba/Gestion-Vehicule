@@ -20,3 +20,7 @@ C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.pdb
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.genruntimeconfig.cache
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\ref\Projet.dll
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Inscription.resources
+C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Form2.resources
+C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.GestionCamion.resources
+C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.gestion_voiture.resources
+C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Menu.resources

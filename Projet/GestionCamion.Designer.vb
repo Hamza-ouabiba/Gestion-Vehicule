@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class gestion_voiture
+Partial Class GestionCamion
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -23,7 +23,7 @@ Partial Class gestion_voiture
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lista = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
@@ -31,14 +31,14 @@ Partial Class gestion_voiture
         Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.tonnage = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.IconPictureBox5 = New FontAwesome.Sharp.IconPictureBox()
         Me.Deconn = New System.Windows.Forms.Button()
         Me.autre_ = New System.Windows.Forms.TextBox()
         Me.autre = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.citroen = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.peugeot = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.place = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.IconPictureBox4 = New FontAwesome.Sharp.IconPictureBox()
         Me.modifier = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.sortie = New Guna.UI2.WinForms.Guna2DateTimePicker()
@@ -58,7 +58,7 @@ Partial Class gestion_voiture
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,24 +66,24 @@ Partial Class gestion_voiture
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.ListView1)
-        Me.Panel7.Location = New System.Drawing.Point(672, 18)
+        Me.Panel7.Controls.Add(Me.lista)
+        Me.Panel7.Location = New System.Drawing.Point(666, 12)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(893, 707)
-        Me.Panel7.TabIndex = 32
+        Me.Panel7.Size = New System.Drawing.Size(1617, 845)
+        Me.Panel7.TabIndex = 34
         '
-        'ListView1
+        'lista
         '
-        Me.ListView1.BackColor = System.Drawing.Color.Gray
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(893, 727)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.lista.BackColor = System.Drawing.Color.Gray
+        Me.lista.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.lista.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lista.FullRowSelect = True
+        Me.lista.Location = New System.Drawing.Point(69, 0)
+        Me.lista.Name = "lista"
+        Me.lista.Size = New System.Drawing.Size(901, 774)
+        Me.lista.TabIndex = 0
+        Me.lista.UseCompatibleStateImageBehavior = False
+        Me.lista.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
@@ -97,7 +97,7 @@ Partial Class gestion_voiture
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Nombre de place"
+        Me.ColumnHeader3.Text = "Tonnage"
         Me.ColumnHeader3.Width = 150
         '
         'ColumnHeader4
@@ -117,14 +117,14 @@ Partial Class gestion_voiture
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.tonnage)
+        Me.Panel6.Controls.Add(Me.Panel4)
+        Me.Panel6.Controls.Add(Me.IconPictureBox5)
         Me.Panel6.Controls.Add(Me.Deconn)
         Me.Panel6.Controls.Add(Me.autre_)
         Me.Panel6.Controls.Add(Me.autre)
         Me.Panel6.Controls.Add(Me.citroen)
         Me.Panel6.Controls.Add(Me.peugeot)
-        Me.Panel6.Controls.Add(Me.place)
-        Me.Panel6.Controls.Add(Me.Panel3)
-        Me.Panel6.Controls.Add(Me.IconPictureBox4)
         Me.Panel6.Controls.Add(Me.modifier)
         Me.Panel6.Controls.Add(Me.Label4)
         Me.Panel6.Controls.Add(Me.sortie)
@@ -142,10 +142,46 @@ Partial Class gestion_voiture
         Me.Panel6.Controls.Add(Me.IconPictureBox3)
         Me.Panel6.Controls.Add(Me.Panel2)
         Me.Panel6.Controls.Add(Me.IconPictureBox2)
-        Me.Panel6.Location = New System.Drawing.Point(28, 18)
+        Me.Panel6.Location = New System.Drawing.Point(22, 12)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(608, 727)
-        Me.Panel6.TabIndex = 31
+        Me.Panel6.Size = New System.Drawing.Size(1617, 845)
+        Me.Panel6.TabIndex = 33
+        '
+        'tonnage
+        '
+        Me.tonnage.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.tonnage.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tonnage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.tonnage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.tonnage.Location = New System.Drawing.Point(148, 254)
+        Me.tonnage.Multiline = True
+        Me.tonnage.Name = "tonnage"
+        Me.tonnage.PlaceholderText = "Tonnage"
+        Me.tonnage.Size = New System.Drawing.Size(324, 32)
+        Me.tonnage.TabIndex = 67
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.Panel4.Location = New System.Drawing.Point(113, 292)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(359, 1)
+        Me.Panel4.TabIndex = 66
+        '
+        'IconPictureBox5
+        '
+        Me.IconPictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.IconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Weight
+        Me.IconPictureBox5.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconPictureBox5.IconSize = 25
+        Me.IconPictureBox5.Location = New System.Drawing.Point(113, 254)
+        Me.IconPictureBox5.Name = "IconPictureBox5"
+        Me.IconPictureBox5.Size = New System.Drawing.Size(25, 25)
+        Me.IconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.IconPictureBox5.TabIndex = 65
+        Me.IconPictureBox5.TabStop = False
         '
         'Deconn
         '
@@ -153,7 +189,7 @@ Partial Class gestion_voiture
         Me.Deconn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Deconn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Deconn.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Deconn.Location = New System.Drawing.Point(3, 3)
+        Me.Deconn.Location = New System.Drawing.Point(-4, 3)
         Me.Deconn.Name = "Deconn"
         Me.Deconn.Size = New System.Drawing.Size(136, 41)
         Me.Deconn.TabIndex = 64
@@ -162,7 +198,7 @@ Partial Class gestion_voiture
         '
         'autre_
         '
-        Me.autre_.Location = New System.Drawing.Point(209, 361)
+        Me.autre_.Location = New System.Drawing.Point(207, 389)
         Me.autre_.Name = "autre_"
         Me.autre_.PlaceholderText = "Autre"
         Me.autre_.Size = New System.Drawing.Size(159, 27)
@@ -177,7 +213,7 @@ Partial Class gestion_voiture
         Me.autre.CheckedState.InnerColor = System.Drawing.Color.White
         Me.autre.CheckedState.InnerOffset = -4
         Me.autre.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.autre.Location = New System.Drawing.Point(410, 320)
+        Me.autre.Location = New System.Drawing.Point(406, 341)
         Me.autre.Name = "autre"
         Me.autre.Size = New System.Drawing.Size(66, 24)
         Me.autre.TabIndex = 62
@@ -196,7 +232,7 @@ Partial Class gestion_voiture
         Me.citroen.CheckedState.InnerColor = System.Drawing.Color.White
         Me.citroen.CheckedState.InnerOffset = -4
         Me.citroen.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.citroen.Location = New System.Drawing.Point(320, 320)
+        Me.citroen.Location = New System.Drawing.Point(316, 341)
         Me.citroen.Name = "citroen"
         Me.citroen.Size = New System.Drawing.Size(78, 24)
         Me.citroen.TabIndex = 61
@@ -215,7 +251,7 @@ Partial Class gestion_voiture
         Me.peugeot.CheckedState.InnerColor = System.Drawing.Color.White
         Me.peugeot.CheckedState.InnerOffset = -4
         Me.peugeot.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.peugeot.Location = New System.Drawing.Point(230, 320)
+        Me.peugeot.Location = New System.Drawing.Point(226, 341)
         Me.peugeot.Name = "peugeot"
         Me.peugeot.Size = New System.Drawing.Size(84, 24)
         Me.peugeot.TabIndex = 60
@@ -225,42 +261,6 @@ Partial Class gestion_voiture
         Me.peugeot.UncheckedState.FillColor = System.Drawing.Color.Transparent
         Me.peugeot.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         '
-        'place
-        '
-        Me.place.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.place.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.place.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.place.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.place.Location = New System.Drawing.Point(149, 249)
-        Me.place.Multiline = True
-        Me.place.Name = "place"
-        Me.place.PlaceholderText = "Nombre de place"
-        Me.place.Size = New System.Drawing.Size(324, 32)
-        Me.place.TabIndex = 58
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(114, 287)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(359, 1)
-        Me.Panel3.TabIndex = 57
-        '
-        'IconPictureBox4
-        '
-        Me.IconPictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.IconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.IconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.PeopleArrows
-        Me.IconPictureBox4.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.IconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconPictureBox4.IconSize = 25
-        Me.IconPictureBox4.Location = New System.Drawing.Point(114, 249)
-        Me.IconPictureBox4.Name = "IconPictureBox4"
-        Me.IconPictureBox4.Size = New System.Drawing.Size(25, 25)
-        Me.IconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.IconPictureBox4.TabIndex = 56
-        Me.IconPictureBox4.TabStop = False
-        '
         'modifier
         '
         Me.modifier.BackColor = System.Drawing.Color.Orange
@@ -269,7 +269,7 @@ Partial Class gestion_voiture
         Me.modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modifier.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.modifier.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.modifier.Location = New System.Drawing.Point(410, 653)
+        Me.modifier.Location = New System.Drawing.Point(410, 700)
         Me.modifier.Name = "modifier"
         Me.modifier.Size = New System.Drawing.Size(172, 54)
         Me.modifier.TabIndex = 55
@@ -282,7 +282,7 @@ Partial Class gestion_voiture
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label4.Location = New System.Drawing.Point(113, 497)
+        Me.Label4.Location = New System.Drawing.Point(113, 544)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(114, 18)
         Me.Label4.TabIndex = 54
@@ -294,7 +294,7 @@ Partial Class gestion_voiture
         Me.sortie.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.sortie.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.sortie.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.sortie.Location = New System.Drawing.Point(113, 529)
+        Me.sortie.Location = New System.Drawing.Point(113, 587)
         Me.sortie.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.sortie.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.sortie.Name = "sortie"
@@ -307,7 +307,7 @@ Partial Class gestion_voiture
         Me.erreur.AutoSize = True
         Me.erreur.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.erreur.ForeColor = System.Drawing.Color.Red
-        Me.erreur.Location = New System.Drawing.Point(113, 603)
+        Me.erreur.Location = New System.Drawing.Point(113, 654)
         Me.erreur.Name = "erreur"
         Me.erreur.Size = New System.Drawing.Size(277, 22)
         Me.erreur.TabIndex = 52
@@ -320,7 +320,7 @@ Partial Class gestion_voiture
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(143, 320)
+        Me.Label3.Location = New System.Drawing.Point(139, 341)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 18)
         Me.Label3.TabIndex = 50
@@ -334,7 +334,7 @@ Partial Class gestion_voiture
         Me.supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.supprimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.supprimer.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.supprimer.Location = New System.Drawing.Point(46, 653)
+        Me.supprimer.Location = New System.Drawing.Point(46, 700)
         Me.supprimer.Name = "supprimer"
         Me.supprimer.Size = New System.Drawing.Size(161, 54)
         Me.supprimer.TabIndex = 48
@@ -349,7 +349,7 @@ Partial Class gestion_voiture
         Me.enregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.enregistrer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.enregistrer.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.enregistrer.Location = New System.Drawing.Point(222, 653)
+        Me.enregistrer.Location = New System.Drawing.Point(222, 700)
         Me.enregistrer.Name = "enregistrer"
         Me.enregistrer.Size = New System.Drawing.Size(172, 54)
         Me.enregistrer.TabIndex = 47
@@ -362,7 +362,7 @@ Partial Class gestion_voiture
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label2.Location = New System.Drawing.Point(113, 398)
+        Me.Label2.Location = New System.Drawing.Point(112, 447)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 18)
         Me.Label2.TabIndex = 40
@@ -374,7 +374,7 @@ Partial Class gestion_voiture
         Me.entree.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.entree.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.entree.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.entree.Location = New System.Drawing.Point(113, 430)
+        Me.entree.Location = New System.Drawing.Point(113, 482)
         Me.entree.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.entree.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.entree.Name = "entree"
@@ -423,11 +423,11 @@ Partial Class gestion_voiture
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(138, 30)
+        Me.Label1.Location = New System.Drawing.Point(112, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(334, 51)
+        Me.Label1.Size = New System.Drawing.Size(368, 51)
         Me.Label1.TabIndex = 35
-        Me.Label1.Text = "Gestion Voiture"
+        Me.Label1.Text = "Gestion Camions"
         '
         'Nom
         '
@@ -450,7 +450,7 @@ Partial Class gestion_voiture
         Me.IconPictureBox3.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.IconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconPictureBox3.IconSize = 25
-        Me.IconPictureBox3.Location = New System.Drawing.Point(114, 320)
+        Me.IconPictureBox3.Location = New System.Drawing.Point(110, 341)
         Me.IconPictureBox3.Name = "IconPictureBox3"
         Me.IconPictureBox3.Size = New System.Drawing.Size(25, 25)
         Me.IconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -480,20 +480,21 @@ Partial Class gestion_voiture
         Me.IconPictureBox2.TabIndex = 29
         Me.IconPictureBox2.TabStop = False
         '
-        'gestion_voiture
+        'GestionCamion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1599, 798)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ClientSize = New System.Drawing.Size(1723, 823)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
-        Me.Name = "gestion_voiture"
-        Me.Text = "gestion_voiture"
+        Me.Name = "GestionCamion"
+        Me.Text = "GestionCamion"
         Me.Panel7.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -502,12 +503,22 @@ Partial Class gestion_voiture
     End Sub
 
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents lista As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents Panel6 As Panel
+    Friend WithEvents Deconn As Button
+    Friend WithEvents autre_ As TextBox
+    Friend WithEvents autre As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents citroen As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents peugeot As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents modifier As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents sortie As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents erreur As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents supprimer As Button
@@ -522,17 +533,7 @@ Partial Class gestion_voiture
     Friend WithEvents IconPictureBox3 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents IconPictureBox2 As FontAwesome.Sharp.IconPictureBox
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents modifier As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents sortie As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents place As TextBox
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents IconPictureBox4 As FontAwesome.Sharp.IconPictureBox
-    Friend WithEvents autre_ As TextBox
-    Friend WithEvents autre As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents citroen As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents peugeot As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents Deconn As Button
+    Friend WithEvents tonnage As TextBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents IconPictureBox5 As FontAwesome.Sharp.IconPictureBox
 End Class

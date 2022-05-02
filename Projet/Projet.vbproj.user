@@ -4,6 +4,12 @@
     <Compile Update="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GestionCamion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="gestion_voiture.vb">
       <SubType>Form</SubType>
     </Compile>
