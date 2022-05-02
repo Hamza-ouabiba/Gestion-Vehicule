@@ -21,10 +21,6 @@ Public Class Form1
             erreur.Text = "Base de donne vide veuillez creer un compte "
         End If
     End Sub
-    Private Sub inscri_Click(sender As Object, e As EventArgs) Handles inscri.Click
-        Inscription.Show()
-        Me.Hide()
-    End Sub
     Private Function testeLogin(user() As Utilisateur, login As String, password As String, compteur As Integer)
         Dim i As Integer
         For i = 0 To compteur - 1
@@ -34,4 +30,17 @@ Public Class Form1
         Next
         Return -1
     End Function
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles affichage.CheckedChanged
+        If affichage.Checked Then
+            mdp.UseSystemPasswordChar = False
+        Else
+            mdp.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub inscri_Click_1(sender As Object, e As EventArgs) Handles inscri.Click
+        Inscription.Show()
+        Me.Hide()
+    End Sub
 End Class

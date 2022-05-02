@@ -23,6 +23,12 @@ Partial Class Inscription
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.cacher2 = New FontAwesome.Sharp.IconButton()
+        Me.cacher = New FontAwesome.Sharp.IconButton()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
+        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
+        Me.erreur = New System.Windows.Forms.Label()
         Me.sexe = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.initialiser = New System.Windows.Forms.Button()
@@ -31,7 +37,6 @@ Partial Class Inscription
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.IconPictureBox5 = New FontAwesome.Sharp.IconPictureBox()
         Me.mdp = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.IconPictureBox4 = New FontAwesome.Sharp.IconPictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.naissance = New Guna.UI2.WinForms.Guna2DateTimePicker()
@@ -49,7 +54,6 @@ Partial Class Inscription
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader()
-        Me.erreur = New System.Windows.Forms.Label()
         Me.Panel6.SuspendLayout()
         CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +65,11 @@ Partial Class Inscription
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.cacher2)
+        Me.Panel6.Controls.Add(Me.cacher)
+        Me.Panel6.Controls.Add(Me.Panel3)
+        Me.Panel6.Controls.Add(Me.IconButton3)
+        Me.Panel6.Controls.Add(Me.IconButton2)
         Me.Panel6.Controls.Add(Me.erreur)
         Me.Panel6.Controls.Add(Me.sexe)
         Me.Panel6.Controls.Add(Me.Label3)
@@ -70,7 +79,6 @@ Partial Class Inscription
         Me.Panel6.Controls.Add(Me.Panel5)
         Me.Panel6.Controls.Add(Me.IconPictureBox5)
         Me.Panel6.Controls.Add(Me.mdp)
-        Me.Panel6.Controls.Add(Me.Panel4)
         Me.Panel6.Controls.Add(Me.IconPictureBox4)
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.naissance)
@@ -86,6 +94,90 @@ Partial Class Inscription
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(610, 707)
         Me.Panel6.TabIndex = 29
+        '
+        'cacher2
+        '
+        Me.cacher2.FlatAppearance.BorderSize = 0
+        Me.cacher2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cacher2.IconChar = FontAwesome.Sharp.IconChar.EyeSlash
+        Me.cacher2.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.cacher2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.cacher2.IconSize = 30
+        Me.cacher2.Location = New System.Drawing.Point(444, 467)
+        Me.cacher2.Name = "cacher2"
+        Me.cacher2.Size = New System.Drawing.Size(28, 30)
+        Me.cacher2.TabIndex = 58
+        Me.cacher2.UseVisualStyleBackColor = True
+        Me.cacher2.Visible = False
+        '
+        'cacher
+        '
+        Me.cacher.FlatAppearance.BorderSize = 0
+        Me.cacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cacher.IconChar = FontAwesome.Sharp.IconChar.EyeSlash
+        Me.cacher.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.cacher.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.cacher.IconSize = 30
+        Me.cacher.Location = New System.Drawing.Point(444, 403)
+        Me.cacher.Name = "cacher"
+        Me.cacher.Size = New System.Drawing.Size(28, 30)
+        Me.cacher.TabIndex = 57
+        Me.cacher.UseVisualStyleBackColor = True
+        Me.cacher.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(113, 441)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(359, 1)
+        Me.Panel3.TabIndex = 56
+        '
+        'IconButton3
+        '
+        Me.IconButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.IconButton3.FlatAppearance.BorderSize = 0
+        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton3.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.IconButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.Eye
+        Me.IconButton3.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton3.IconSize = 30
+        Me.IconButton3.Location = New System.Drawing.Point(443, 464)
+        Me.IconButton3.Name = "IconButton3"
+        Me.IconButton3.Size = New System.Drawing.Size(29, 32)
+        Me.IconButton3.TabIndex = 55
+        Me.IconButton3.UseVisualStyleBackColor = False
+        '
+        'IconButton2
+        '
+        Me.IconButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.IconButton2.FlatAppearance.BorderSize = 0
+        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton2.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.IconButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.Eye
+        Me.IconButton2.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton2.IconSize = 30
+        Me.IconButton2.Location = New System.Drawing.Point(443, 403)
+        Me.IconButton2.Name = "IconButton2"
+        Me.IconButton2.Size = New System.Drawing.Size(29, 32)
+        Me.IconButton2.TabIndex = 54
+        Me.IconButton2.UseVisualStyleBackColor = False
+        '
+        'erreur
+        '
+        Me.erreur.AutoSize = True
+        Me.erreur.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.erreur.ForeColor = System.Drawing.Color.Red
+        Me.erreur.Location = New System.Drawing.Point(113, 523)
+        Me.erreur.Name = "erreur"
+        Me.erreur.Size = New System.Drawing.Size(277, 22)
+        Me.erreur.TabIndex = 52
+        Me.erreur.Text = "Veuillez Entrez les champs requis"
+        Me.erreur.Visible = False
         '
         'sexe
         '
@@ -110,7 +202,7 @@ Partial Class Inscription
         '
         'initialiser
         '
-        Me.initialiser.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.initialiser.BackColor = System.Drawing.Color.Red
         Me.initialiser.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.initialiser.FlatAppearance.BorderSize = 0
         Me.initialiser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -182,19 +274,10 @@ Partial Class Inscription
         Me.mdp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.mdp.Location = New System.Drawing.Point(148, 403)
         Me.mdp.Name = "mdp"
-        Me.mdp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.mdp.PlaceholderText = "Mot de Passe"
         Me.mdp.Size = New System.Drawing.Size(324, 21)
         Me.mdp.TabIndex = 43
         Me.mdp.UseSystemPasswordChar = True
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(113, 441)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(359, 1)
-        Me.Panel4.TabIndex = 42
         '
         'IconPictureBox4
         '
@@ -376,18 +459,6 @@ Partial Class Inscription
         Me.ColumnHeader4.Text = "Date de naissance"
         Me.ColumnHeader4.Width = 200
         '
-        'erreur
-        '
-        Me.erreur.AutoSize = True
-        Me.erreur.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.erreur.ForeColor = System.Drawing.Color.Red
-        Me.erreur.Location = New System.Drawing.Point(113, 523)
-        Me.erreur.Name = "erreur"
-        Me.erreur.Size = New System.Drawing.Size(277, 22)
-        Me.erreur.TabIndex = 52
-        Me.erreur.Text = "Veuillez Entrez les champs requis"
-        Me.erreur.Visible = False
-        '
         'Inscription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -417,7 +488,6 @@ Partial Class Inscription
     Friend WithEvents Panel5 As Panel
     Friend WithEvents IconPictureBox5 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents mdp As TextBox
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents IconPictureBox4 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents naissance As Guna.UI2.WinForms.Guna2DateTimePicker
@@ -439,4 +509,9 @@ Partial Class Inscription
     Friend WithEvents sexe As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents erreur As Label
+    Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents cacher2 As FontAwesome.Sharp.IconButton
+    Friend WithEvents cacher As FontAwesome.Sharp.IconButton
 End Class
