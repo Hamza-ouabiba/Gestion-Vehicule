@@ -175,7 +175,6 @@ Partial Class Form1
         'inscri
         '
         Me.inscri.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.inscri.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.inscri.FlatAppearance.BorderSize = 0
         Me.inscri.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.inscri.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
@@ -204,7 +203,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.IconPictureBox2)
         Me.Controls.Add(Me.IconPictureBox1)
-        Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
         Me.Text = "Connexion"
