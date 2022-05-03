@@ -7,10 +7,7 @@ Public Class Inscription
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
-        For i As Integer = 0 To 100
-            taille_voiture(i) = 0
-            taille_camion(i) = 0
-        Next
+
         If Nom.Text <> "" And Email.Text <> "" And sexe.Text <> "" And mdp.Text <> "" And mdp2.Text <> "" Then
             If mdp.Text = mdp2.Text Then
                 erreur.Visible = False

@@ -1,23 +1,8 @@
 ﻿Public Class MenuPrinci
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        gestion_voiture.Show()
-        Me.Hide()
-    End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        GestionCamion.Show()
-        Me.Hide()
-    End Sub
-    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
-        Dim form1 As New Form1
-        Me.Hide()
-        Sleep(1000)
-        form1.Show()
-    End Sub
-
-    Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MsgBox($"user : {gestion_voiture.current_user} de taille voiture : {Inscription.taille_voiture(gestion_voiture.current_user)}")
         gestion_voiture.effacerContenu()
-        GestionCamion.effacerContenu()
         If Inscription.taille_voiture(gestion_voiture.current_user) > 0 Then
             For i As Integer = 0 To (Inscription.taille_voiture(gestion_voiture.current_user)) - 1
                 With gestion_voiture.ListView1.Items.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).chauffeur)
@@ -29,6 +14,12 @@
                 End With
             Next
         End If
+        gestion_voiture.Show()
+        Me.Hide()
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        MsgBox($"user : {GestionCamion.current_user} de taille camion : {Inscription.taille_camion(GestionCamion.current_user)}")
+        GestionCamion.effacerContenu()
         If Inscription.taille_camion(GestionCamion.current_user) > 0 Then
             For i As Integer = 0 To Inscription.taille_camion(GestionCamion.current_user) - 1
                 With GestionCamion.lista.Items.Add(GestionCamion.camion_(GestionCamion.current_user, i).chauffeur)
@@ -40,6 +31,17 @@
                 End With
             Next
         End If
+        GestionCamion.Show()
+        Me.Hide()
+    End Sub
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Dim form1 As New Form1
+        Me.Hide()
+        Sleep(1000)
+        form1.Show()
+    End Sub
+
+    Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label2.Text = $"Salut {Inscription.user(gestion_voiture.current_user).nom}"
     End Sub
 End Class

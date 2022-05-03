@@ -6,6 +6,7 @@
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         compteur_camion = Inscription.taille_camion(current_user)
+        MsgBox(compteur_camion)
         If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
@@ -19,6 +20,7 @@
                     End With
                     emptyText()
                     compteur_camion += 1
+                    Inscription.taille_camion(current_user) = compteur_camion
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le tonnage ne peut pas etre un texte"
@@ -35,6 +37,7 @@
                     End With
                     emptyText()
                     compteur_camion += 1
+                    Inscription.taille_camion(current_user) = compteur_camion
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le tonnage ne peut pas etre un texte"
@@ -51,12 +54,13 @@
                     End With
                     emptyText()
                     compteur_camion += 1
+                    Inscription.taille_camion(current_user) = compteur_camion
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le tonnage ne peut pas etre un texte"
                 End Try
             End If
-            Inscription.taille_camion(current_user) = compteur_camion
+
         Else
             erreur.Visible = True
         End If
@@ -106,7 +110,6 @@
 
     Private Sub decon_Click(sender As Object, e As EventArgs) Handles decon.Click
         Dim form1 As New Form1()
-        compteur_camion = 0
         Me.Hide()
         form1.Show()
     End Sub

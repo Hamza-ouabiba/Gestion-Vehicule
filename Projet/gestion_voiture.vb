@@ -5,6 +5,7 @@
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         compteur_voiture = Inscription.taille_voiture(current_user)
+        MsgBox(compteur_voiture)
         If Nom.Text <> "" And matricule.Text <> "" And place.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
@@ -18,6 +19,7 @@
                     End With
                     emptyText()
                     compteur_voiture += 1
+                    Inscription.taille_voiture(current_user) = compteur_voiture
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le nombre de place ne peut pas etre un texte"
@@ -34,6 +36,7 @@
                     End With
                     emptyText()
                     compteur_voiture += 1
+                    Inscription.taille_voiture(current_user) = compteur_voiture
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le nombre de place ne peut pas etre un texte"
@@ -50,12 +53,13 @@
                     End With
                     emptyText()
                     compteur_voiture += 1
+                    Inscription.taille_voiture(current_user) = compteur_voiture
                 Catch ex As Exception
                     erreur.Visible = True
                     erreur.Text = "Le nombre de place ne peut pas etre un texte"
                 End Try
             End If
-            Inscription.taille_voiture(current_user) = compteur_voiture
+
         Else
             erreur.Visible = True
         End If
