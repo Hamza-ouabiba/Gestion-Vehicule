@@ -40,8 +40,13 @@
         Sleep(1000)
         form1.Show()
     End Sub
-
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label2.Text = $"Salut {Inscription.user(gestion_voiture.current_user).nom}"
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim gestion_utili As New GestionUtilisateur()
+        Me.Hide()
+        gestion_utili.Show()
     End Sub
 End Class

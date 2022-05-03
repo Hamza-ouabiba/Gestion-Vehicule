@@ -10,6 +10,9 @@
     <Compile Update="GestionCamion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GestionUtilisateur.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="gestion_voiture.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -24,16 +24,16 @@ Partial Class MenuPrinci
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -61,6 +61,19 @@ Partial Class MenuPrinci
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Gestion Voiture"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'IconButton2
+        '
+        Me.IconButton2.BackColor = System.Drawing.Color.Black
+        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.CarAlt
+        Me.IconButton2.IconColor = System.Drawing.Color.Silver
+        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton2.Location = New System.Drawing.Point(0, -23)
+        Me.IconButton2.Name = "IconButton2"
+        Me.IconButton2.Size = New System.Drawing.Size(72, 134)
+        Me.IconButton2.TabIndex = 41
+        Me.IconButton2.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -95,6 +108,19 @@ Partial Class MenuPrinci
         Me.Button2.Text = "Gestions Camions"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'IconButton3
+        '
+        Me.IconButton3.BackColor = System.Drawing.Color.Black
+        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.Truck
+        Me.IconButton3.IconColor = System.Drawing.Color.Silver
+        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton3.Location = New System.Drawing.Point(-103, -54)
+        Me.IconButton3.Name = "IconButton3"
+        Me.IconButton3.Size = New System.Drawing.Size(284, 197)
+        Me.IconButton3.TabIndex = 41
+        Me.IconButton3.UseVisualStyleBackColor = False
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.IconButton4)
@@ -103,6 +129,19 @@ Partial Class MenuPrinci
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(300, 82)
         Me.Panel3.TabIndex = 38
+        '
+        'IconButton4
+        '
+        Me.IconButton4.BackColor = System.Drawing.Color.Black
+        Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.UserAlt
+        Me.IconButton4.IconColor = System.Drawing.Color.Silver
+        Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton4.Location = New System.Drawing.Point(-4, -23)
+        Me.IconButton4.Name = "IconButton4"
+        Me.IconButton4.Size = New System.Drawing.Size(73, 134)
+        Me.IconButton4.TabIndex = 41
+        Me.IconButton4.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -143,45 +182,6 @@ Partial Class MenuPrinci
         Me.Label2.Size = New System.Drawing.Size(86, 29)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "Label2"
-        '
-        'IconButton2
-        '
-        Me.IconButton2.BackColor = System.Drawing.Color.Black
-        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.CarAlt
-        Me.IconButton2.IconColor = System.Drawing.Color.Silver
-        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton2.Location = New System.Drawing.Point(0, -23)
-        Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(72, 134)
-        Me.IconButton2.TabIndex = 41
-        Me.IconButton2.UseVisualStyleBackColor = False
-        '
-        'IconButton3
-        '
-        Me.IconButton3.BackColor = System.Drawing.Color.Black
-        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.Truck
-        Me.IconButton3.IconColor = System.Drawing.Color.Silver
-        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton3.Location = New System.Drawing.Point(-103, -54)
-        Me.IconButton3.Name = "IconButton3"
-        Me.IconButton3.Size = New System.Drawing.Size(284, 197)
-        Me.IconButton3.TabIndex = 41
-        Me.IconButton3.UseVisualStyleBackColor = False
-        '
-        'IconButton4
-        '
-        Me.IconButton4.BackColor = System.Drawing.Color.Black
-        Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.UserAlt
-        Me.IconButton4.IconColor = System.Drawing.Color.Silver
-        Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton4.Location = New System.Drawing.Point(-4, -23)
-        Me.IconButton4.Name = "IconButton4"
-        Me.IconButton4.Size = New System.Drawing.Size(73, 134)
-        Me.IconButton4.TabIndex = 41
-        Me.IconButton4.UseVisualStyleBackColor = False
         '
         'MenuPrinci
         '
