@@ -23,27 +23,37 @@
                     erreur.Text = "Le nombre de place ne peut pas etre un texte"
                 End Try
             ElseIf citroen.Checked = True Then
-                voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), citroen.Text, entree.Text, sortie.Text)
-                With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
-                    .SubItems.Add(voiture(current_user, compteur_voiture).marque)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
-                End With
-                emptyText()
-                compteur_voiture += 1
+                Try
+                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), citroen.Text, entree.Text, sortie.Text)
+                    With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
+                        .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
+                        .SubItems.Add(voiture(current_user, compteur_voiture).marque)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
+                    End With
+                    emptyText()
+                    compteur_voiture += 1
+                Catch ex As Exception
+                    erreur.Visible = True
+                    erreur.Text = "Le nombre de place ne peut pas etre un texte"
+                End Try
             Else
-                voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), autre_.Text, entree.Text, sortie.Text)
-                With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
-                    .SubItems.Add(voiture(current_user, compteur_voiture).marque)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
-                    .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
-                End With
-                emptyText()
-                compteur_voiture += 1
+                Try
+                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), autre_.Text, entree.Text, sortie.Text)
+                    With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
+                        .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
+                        .SubItems.Add(voiture(current_user, compteur_voiture).marque)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).date_entre)
+                        .SubItems.Add(voiture(current_user, compteur_voiture).date_sortie)
+                    End With
+                    emptyText()
+                    compteur_voiture += 1
+                Catch ex As Exception
+                    erreur.Visible = True
+                    erreur.Text = "Le nombre de place ne peut pas etre un texte"
+                End Try
             End If
             Inscription.taille_voiture(current_user) = compteur_voiture
         Else
