@@ -16,7 +16,6 @@
     End Sub
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox("Ajout...")
         gestion_voiture.effacerContenu()
         GestionCamion.effacerContenu()
         If Inscription.taille_voiture(gestion_voiture.current_user) > 0 Then
@@ -41,6 +40,6 @@
                 End With
             Next
         End If
-        Label2.Text = $"A fen {Inscription.user(gestion_voiture.current_user).nom}"
+        Label2.Text = $"Salut {Inscription.user(gestion_voiture.current_user).nom}"
     End Sub
 End Class

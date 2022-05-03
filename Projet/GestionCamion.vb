@@ -110,4 +110,31 @@
         Me.Hide()
         form1.Show()
     End Sub
+    Function chercherSuppr(chauff As String, imma As String, taille As Integer)
+        For i As Integer = 0 To taille - 1
+            If camion_(Me.current_user, i).chauffeur = chauff And camion_(Me.current_user, i).immatriculation = imma Then
+                Return i
+            End If
+        Next
+        Return -1
+    End Function
+    Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
+        Dim indice As Integer
+        erreur.Visible = True
+        erreur.Text = "Entre le nom du chaffeur et l'immatriculation a supprimer"
+        erreur.ForeColor = Color.Orange
+        If Nom.Text <> "" And matricule.Text <> "" Then
+            indice = chercherSuppr(Nom.Text, matricule.Text, compteur_camion)
+            If indice <> -1 Then
+                Me.lista.Items.RemoveAt(indice)
+                For i As Integer = indice To compteur_camion - 2
+                    camion_(Me.current_user, i) = camion_(Me.current_user, i + 1)
+                Next
+                Inscription.taille_camion(Me.current_user) -= 1
+            End If
+            erreur.Text = "Supprimer avec succes"
+            erreur.ForeColor = Color.Green
+        End If
+    End Sub
+
 End Class

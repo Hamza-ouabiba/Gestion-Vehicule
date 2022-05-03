@@ -31,7 +31,9 @@ Partial Class GestionCamion
         Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.decon = New FontAwesome.Sharp.IconButton()
         Me.tonnage = New System.Windows.Forms.TextBox()
+        Me.menu = New FontAwesome.Sharp.IconButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.IconPictureBox5 = New FontAwesome.Sharp.IconPictureBox()
         Me.autre_ = New System.Windows.Forms.TextBox()
@@ -55,8 +57,6 @@ Partial Class GestionCamion
         Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
-        Me.decon = New FontAwesome.Sharp.IconButton()
-        Me.menu = New FontAwesome.Sharp.IconButton()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,6 +149,20 @@ Partial Class GestionCamion
         Me.Panel6.Size = New System.Drawing.Size(1617, 845)
         Me.Panel6.TabIndex = 33
         '
+        'decon
+        '
+        Me.decon.BackColor = System.Drawing.Color.Red
+        Me.decon.FlatAppearance.BorderSize = 0
+        Me.decon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.decon.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
+        Me.decon.IconColor = System.Drawing.Color.Black
+        Me.decon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.decon.Location = New System.Drawing.Point(51, 0)
+        Me.decon.Name = "decon"
+        Me.decon.Size = New System.Drawing.Size(39, 39)
+        Me.decon.TabIndex = 66
+        Me.decon.UseVisualStyleBackColor = False
+        '
         'tonnage
         '
         Me.tonnage.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
@@ -161,6 +175,22 @@ Partial Class GestionCamion
         Me.tonnage.PlaceholderText = "Tonnage"
         Me.tonnage.Size = New System.Drawing.Size(324, 32)
         Me.tonnage.TabIndex = 67
+        '
+        'menu
+        '
+        Me.menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.menu.FlatAppearance.BorderSize = 0
+        Me.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menu.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.menu.IconColor = System.Drawing.Color.Black
+        Me.menu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.menu.IconSize = 25
+        Me.menu.Location = New System.Drawing.Point(3, 0)
+        Me.menu.Name = "menu"
+        Me.menu.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
+        Me.menu.Size = New System.Drawing.Size(39, 39)
+        Me.menu.TabIndex = 65
+        Me.menu.UseVisualStyleBackColor = False
         '
         'Panel4
         '
@@ -468,36 +498,6 @@ Partial Class GestionCamion
         Me.IconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconPictureBox2.TabIndex = 29
         Me.IconPictureBox2.TabStop = False
-        '
-        'decon
-        '
-        Me.decon.BackColor = System.Drawing.Color.Red
-        Me.decon.FlatAppearance.BorderSize = 0
-        Me.decon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.decon.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
-        Me.decon.IconColor = System.Drawing.Color.Black
-        Me.decon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.decon.Location = New System.Drawing.Point(51, 0)
-        Me.decon.Name = "decon"
-        Me.decon.Size = New System.Drawing.Size(39, 39)
-        Me.decon.TabIndex = 66
-        Me.decon.UseVisualStyleBackColor = False
-        '
-        'menu
-        '
-        Me.menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.menu.FlatAppearance.BorderSize = 0
-        Me.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.menu.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
-        Me.menu.IconColor = System.Drawing.Color.Black
-        Me.menu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.menu.IconSize = 25
-        Me.menu.Location = New System.Drawing.Point(3, 0)
-        Me.menu.Name = "menu"
-        Me.menu.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
-        Me.menu.Size = New System.Drawing.Size(39, 39)
-        Me.menu.TabIndex = 65
-        Me.menu.UseVisualStyleBackColor = False
         '
         'GestionCamion
         '

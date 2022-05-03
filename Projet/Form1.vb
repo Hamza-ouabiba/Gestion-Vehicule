@@ -8,7 +8,6 @@ Public Class Form1
             If testeLogin(Inscription.user,
                           Nom.Text,
                           mdp.Text, Inscription.compteur) <> -1 Then
-                MsgBox($"la valeur de la position : {testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)}")
                 erreur.Visible = True
                 erreur.ForeColor = Color.Green
                 erreur.Text = "Connexion avec success"
@@ -16,7 +15,6 @@ Public Class Form1
                 Me.Hide()
                 gestion_voiture.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
                 GestionCamion.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
-                MsgBox("hani siftha")
                 menu.Show()
             Else
                 erreur.Visible = True
