@@ -11,7 +11,7 @@ Public Class Inscription
         If Nom.Text <> "" And Email.Text <> "" And sexe.Text <> "" And mdp.Text <> "" And mdp2.Text <> "" Then
             If mdp.Text = mdp2.Text Then
                 erreur.Visible = False
-                user.AddLast(New Utilisateur(Nom.Text, Email.Text, sexe.Text, naissance.Value, mdp.Text))
+                user.AddLast(New Utilisateur(Nom.Text, Email.Text, sexe.Text, naissance.Value.Date, mdp.Text))
                 With ListView1.Items.Add(user(compteur).nom)
                     .SubItems.Add(user(compteur).email)
                     .SubItems.Add(user(compteur).sexe)
