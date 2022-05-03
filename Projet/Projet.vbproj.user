@@ -16,7 +16,7 @@
     <Compile Update="Inscription.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Menu.vb">
+    <Compile Update="MenuPrinci.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -34,7 +34,6 @@ Partial Class GestionCamion
         Me.tonnage = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.IconPictureBox5 = New FontAwesome.Sharp.IconPictureBox()
-        Me.Deconn = New System.Windows.Forms.Button()
         Me.autre_ = New System.Windows.Forms.TextBox()
         Me.autre = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.citroen = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -56,6 +55,8 @@ Partial Class GestionCamion
         Me.IconPictureBox3 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
+        Me.decon = New FontAwesome.Sharp.IconButton()
+        Me.menu = New FontAwesome.Sharp.IconButton()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.IconPictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,10 +118,11 @@ Partial Class GestionCamion
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.decon)
         Me.Panel6.Controls.Add(Me.tonnage)
+        Me.Panel6.Controls.Add(Me.menu)
         Me.Panel6.Controls.Add(Me.Panel4)
         Me.Panel6.Controls.Add(Me.IconPictureBox5)
-        Me.Panel6.Controls.Add(Me.Deconn)
         Me.Panel6.Controls.Add(Me.autre_)
         Me.Panel6.Controls.Add(Me.autre)
         Me.Panel6.Controls.Add(Me.citroen)
@@ -182,19 +184,6 @@ Partial Class GestionCamion
         Me.IconPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.IconPictureBox5.TabIndex = 65
         Me.IconPictureBox5.TabStop = False
-        '
-        'Deconn
-        '
-        Me.Deconn.BackColor = System.Drawing.Color.Red
-        Me.Deconn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Deconn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Deconn.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Deconn.Location = New System.Drawing.Point(-4, 3)
-        Me.Deconn.Name = "Deconn"
-        Me.Deconn.Size = New System.Drawing.Size(136, 41)
-        Me.Deconn.TabIndex = 64
-        Me.Deconn.Text = "Deconnexion"
-        Me.Deconn.UseVisualStyleBackColor = False
         '
         'autre_
         '
@@ -480,6 +469,36 @@ Partial Class GestionCamion
         Me.IconPictureBox2.TabIndex = 29
         Me.IconPictureBox2.TabStop = False
         '
+        'decon
+        '
+        Me.decon.BackColor = System.Drawing.Color.Red
+        Me.decon.FlatAppearance.BorderSize = 0
+        Me.decon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.decon.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
+        Me.decon.IconColor = System.Drawing.Color.Black
+        Me.decon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.decon.Location = New System.Drawing.Point(51, 0)
+        Me.decon.Name = "decon"
+        Me.decon.Size = New System.Drawing.Size(39, 39)
+        Me.decon.TabIndex = 66
+        Me.decon.UseVisualStyleBackColor = False
+        '
+        'menu
+        '
+        Me.menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.menu.FlatAppearance.BorderSize = 0
+        Me.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menu.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.menu.IconColor = System.Drawing.Color.Black
+        Me.menu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.menu.IconSize = 25
+        Me.menu.Location = New System.Drawing.Point(3, 0)
+        Me.menu.Name = "menu"
+        Me.menu.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
+        Me.menu.Size = New System.Drawing.Size(39, 39)
+        Me.menu.TabIndex = 65
+        Me.menu.UseVisualStyleBackColor = False
+        '
         'GestionCamion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -511,7 +530,6 @@ Partial Class GestionCamion
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Deconn As Button
     Friend WithEvents autre_ As TextBox
     Friend WithEvents autre As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents citroen As Guna.UI2.WinForms.Guna2RadioButton
@@ -536,4 +554,6 @@ Partial Class GestionCamion
     Friend WithEvents tonnage As TextBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents IconPictureBox5 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents decon As FontAwesome.Sharp.IconButton
+    Friend WithEvents menu As FontAwesome.Sharp.IconButton
 End Class

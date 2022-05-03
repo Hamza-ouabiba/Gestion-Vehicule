@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class gestion_voiture
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class gestion_voiture
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -31,7 +31,8 @@ Partial Class gestion_voiture
         Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Deconn = New System.Windows.Forms.Button()
+        Me.decon = New FontAwesome.Sharp.IconButton()
+        Me.menu = New FontAwesome.Sharp.IconButton()
         Me.autre_ = New System.Windows.Forms.TextBox()
         Me.autre = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.citroen = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -117,7 +118,8 @@ Partial Class gestion_voiture
         '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.Deconn)
+        Me.Panel6.Controls.Add(Me.decon)
+        Me.Panel6.Controls.Add(Me.menu)
         Me.Panel6.Controls.Add(Me.autre_)
         Me.Panel6.Controls.Add(Me.autre)
         Me.Panel6.Controls.Add(Me.citroen)
@@ -147,18 +149,35 @@ Partial Class gestion_voiture
         Me.Panel6.Size = New System.Drawing.Size(608, 727)
         Me.Panel6.TabIndex = 31
         '
-        'Deconn
+        'decon
         '
-        Me.Deconn.BackColor = System.Drawing.Color.Red
-        Me.Deconn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Deconn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Deconn.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Deconn.Location = New System.Drawing.Point(3, 3)
-        Me.Deconn.Name = "Deconn"
-        Me.Deconn.Size = New System.Drawing.Size(136, 41)
-        Me.Deconn.TabIndex = 64
-        Me.Deconn.Text = "Deconnexion"
-        Me.Deconn.UseVisualStyleBackColor = False
+        Me.decon.BackColor = System.Drawing.Color.Red
+        Me.decon.FlatAppearance.BorderSize = 0
+        Me.decon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.decon.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
+        Me.decon.IconColor = System.Drawing.Color.Black
+        Me.decon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.decon.Location = New System.Drawing.Point(48, 0)
+        Me.decon.Name = "decon"
+        Me.decon.Size = New System.Drawing.Size(39, 39)
+        Me.decon.TabIndex = 64
+        Me.decon.UseVisualStyleBackColor = False
+        '
+        'menu
+        '
+        Me.menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.menu.FlatAppearance.BorderSize = 0
+        Me.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.menu.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft
+        Me.menu.IconColor = System.Drawing.Color.Black
+        Me.menu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.menu.IconSize = 25
+        Me.menu.Location = New System.Drawing.Point(0, 0)
+        Me.menu.Name = "menu"
+        Me.menu.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
+        Me.menu.Size = New System.Drawing.Size(39, 39)
+        Me.menu.TabIndex = 33
+        Me.menu.UseVisualStyleBackColor = False
         '
         'autre_
         '
@@ -534,5 +553,6 @@ Partial Class gestion_voiture
     Friend WithEvents autre As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents citroen As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents peugeot As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents Deconn As Button
+    Friend WithEvents decon As FontAwesome.Sharp.IconButton
+    Friend WithEvents menu As FontAwesome.Sharp.IconButton
 End Class

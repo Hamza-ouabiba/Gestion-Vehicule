@@ -23,4 +23,4 @@ C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Inscription.resources
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Form2.resources
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.GestionCamion.resources
 C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.gestion_voiture.resources
-C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.Menu.resources
+C:\Projet\Projet\Projet\obj\Debug\net6.0-windows\Projet.MenuPrinci.resources

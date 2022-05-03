@@ -60,13 +60,39 @@
     Sub effacerContenu()
         lista.Items.Clear()
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Deconn.Click
-        Dim form1 As New Form1()
+    Private Sub menu_Click(sender As Object, e As EventArgs) Handles menu.Click
         effacerContenu()
         gestion_voiture.effacerContenu()
+        If Inscription.taille_voiture(gestion_voiture.current_user) > 0 Then
+            For i As Integer = 0 To (Inscription.taille_voiture(gestion_voiture.current_user)) - 1
+                With gestion_voiture.ListView1.Items.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).chauffeur)
+                    .SubItems.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(gestion_voiture.voiture(gestion_voiture.current_user, i).nombre_place))
+                    .SubItems.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).marque)
+                    .SubItems.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).date_entre)
+                    .SubItems.Add(gestion_voiture.voiture(gestion_voiture.current_user, i).date_sortie)
+                End With
+            Next
+        End If
+        If Inscription.taille_camion(Me.current_user) > 0 Then
+            For i As Integer = 0 To Inscription.taille_camion(Me.current_user) - 1
+                With Me.lista.Items.Add(Me.camion_(Me.current_user, i).chauffeur)
+                    .SubItems.Add(Me.camion_(Me.current_user, i).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(Me.camion_(Me.current_user, i).tonnage))
+                    .SubItems.Add(Me.camion_(Me.current_user, i).marque)
+                    .SubItems.Add(Me.camion_(Me.current_user, i).date_entre)
+                    .SubItems.Add(Me.camion_(Me.current_user, i).date_sortie)
+                End With
+            Next
+        End If
+        MenuPrinci.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub decon_Click(sender As Object, e As EventArgs) Handles decon.Click
+        Dim form1 As New Form1()
         compteur_camion = 0
         Me.Hide()
         form1.Show()
     End Sub
-
 End Class

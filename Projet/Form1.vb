@@ -1,9 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class Form1
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
-    Public active As Boolean = 0
     Private Sub Connexion_Click(sender As Object, e As EventArgs) Handles Connexion.Click
-        Dim menu As New Menu()
+        Dim menu As New MenuPrinci()
         erreur.Visible = False
         If Nom.Text <> "" And mdp.Text <> "" And Inscription.compteur > 0 Then
             If testeLogin(Inscription.user,
@@ -14,11 +13,10 @@ Public Class Form1
                 erreur.ForeColor = Color.Green
                 erreur.Text = "Connexion avec success"
                 Sleep(1000)
-                menu.user = Nom.Text
                 Me.Hide()
-                active = 1
                 gestion_voiture.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
                 GestionCamion.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
+                MsgBox("hani siftha")
                 menu.Show()
             Else
                 erreur.Visible = True
