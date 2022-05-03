@@ -42,4 +42,9 @@
         End If
         Label2.Text = $"Salut {Inscription.user(gestion_voiture.current_user).nom}"
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Hide()
+        gestionUtilisateur.Show()
+    End Sub
 End Class

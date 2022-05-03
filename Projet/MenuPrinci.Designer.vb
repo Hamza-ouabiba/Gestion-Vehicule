@@ -191,7 +191,7 @@ Partial Class MenuPrinci
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "Label2"
         '
-        'Menu
+        'MenuPrinci
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -204,7 +204,7 @@ Partial Class MenuPrinci
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
-        Me.Name = "Menu"
+        Me.Name = "MenuPrinci"
         Me.Text = "Menu"
         Me.Panel1.ResumeLayout(False)
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

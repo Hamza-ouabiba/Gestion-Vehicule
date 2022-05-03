@@ -428,7 +428,7 @@ Partial Class Inscription
         '
         'ListView1
         '
-        Me.ListView1.BackColor = System.Drawing.Color.Gray
+        Me.ListView1.BackColor = System.Drawing.SystemColors.GrayText
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ListView1.FullRowSelect = True
