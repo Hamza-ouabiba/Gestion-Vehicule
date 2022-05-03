@@ -45,6 +45,6 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Hide()
-        gestionUtilisateur.Show()
+        gestionUtilisateur.show()
     End Sub
 End Class

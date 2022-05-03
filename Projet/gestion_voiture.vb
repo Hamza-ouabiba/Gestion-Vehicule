@@ -75,6 +75,30 @@
         ListView1.Items.Clear()
     End Sub
     Private Sub menu_Click(sender As Object, e As EventArgs) Handles menu.Click
+        effacerContenu()
+        GestionCamion.effacerContenu()
+        If Inscription.taille_voiture(Me.current_user) > 0 Then
+            For i As Integer = 0 To (Inscription.taille_voiture(Me.current_user)) - 1
+                With Me.ListView1.Items.Add(Me.voiture(Me.current_user, i).chauffeur)
+                    .SubItems.Add(Me.voiture(Me.current_user, i).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(Me.voiture(Me.current_user, i).nombre_place))
+                    .SubItems.Add(Me.voiture(Me.current_user, i).marque)
+                    .SubItems.Add(Me.voiture(Me.current_user, i).date_entre)
+                    .SubItems.Add(Me.voiture(Me.current_user, i).date_sortie)
+                End With
+            Next
+        End If
+        If Inscription.taille_camion(GestionCamion.current_user) > 0 Then
+            For i As Integer = 0 To Inscription.taille_camion(GestionCamion.current_user) - 1
+                With GestionCamion.lista.Items.Add(GestionCamion.camion_(GestionCamion.current_user, i).chauffeur)
+                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).immatriculation)
+                    .SubItems.Add(Convert.ToInt32(GestionCamion.camion_(GestionCamion.current_user, i).tonnage))
+                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).marque)
+                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).date_entre)
+                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).date_sortie)
+                End With
+            Next
+        End If
         MenuPrinci.Show()
         Me.Hide()
     End Sub
@@ -107,31 +131,6 @@
             End If
             erreur.Text = "Supprimer avec succes"
             erreur.ForeColor = Color.Green
-        End If
-    End Sub
-
-    Private Sub gestion_voiture_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Inscription.taille_voiture(Me.current_user) > 0 Then
-            For i As Integer = 0 To (Inscription.taille_voiture(Me.current_user)) - 1
-                With Me.ListView1.Items.Add(Me.voiture(Me.current_user, i).chauffeur)
-                    .SubItems.Add(Me.voiture(Me.current_user, i).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(Me.voiture(Me.current_user, i).nombre_place))
-                    .SubItems.Add(Me.voiture(Me.current_user, i).marque)
-                    .SubItems.Add(Me.voiture(Me.current_user, i).date_entre)
-                    .SubItems.Add(Me.voiture(Me.current_user, i).date_sortie)
-                End With
-            Next
-        End If
-        If Inscription.taille_camion(GestionCamion.current_user) > 0 Then
-            For i As Integer = 0 To Inscription.taille_camion(GestionCamion.current_user) - 1
-                With GestionCamion.lista.Items.Add(GestionCamion.camion_(GestionCamion.current_user, i).chauffeur)
-                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).immatriculation)
-                    .SubItems.Add(Convert.ToInt32(GestionCamion.camion_(GestionCamion.current_user, i).tonnage))
-                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).marque)
-                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).date_entre)
-                    .SubItems.Add(GestionCamion.camion_(GestionCamion.current_user, i).date_sortie)
-                End With
-            Next
         End If
     End Sub
 End Class

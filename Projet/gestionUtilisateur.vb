@@ -8,10 +8,6 @@
             End With
         Next
     End Sub
-    Sub effacerContenu()
-        ListView1.Items.Clear()
-    End Sub
-
     Private Sub menu_Click(sender As Object, e As EventArgs) Handles menu.Click
         Me.Hide()
         MenuPrinci.Show()

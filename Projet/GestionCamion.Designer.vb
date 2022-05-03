@@ -75,10 +75,9 @@ Partial Class GestionCamion
         '
         'lista
         '
-        Me.lista.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lista.BackColor = System.Drawing.Color.Gray
         Me.lista.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.lista.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lista.ForeColor = System.Drawing.SystemColors.Menu
         Me.lista.FullRowSelect = True
         Me.lista.Location = New System.Drawing.Point(69, 0)
         Me.lista.Name = "lista"
