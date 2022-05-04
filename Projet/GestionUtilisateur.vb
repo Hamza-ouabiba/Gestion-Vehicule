@@ -24,7 +24,6 @@
     Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
         Dim indice As Integer
         indice = ListView1_SelectedIndexChanged(sender, e)
-        MsgBox(indice)
         If indice <> -1 And indice <> gestion_voiture.current_user Then
             Me.ListView1.Items.RemoveAt(indice)
             Inscription.user.Remove(Inscription.user(indice))
@@ -45,4 +44,28 @@
             erreur.Text = "Cliquer sur un Item"
         End Try
     End Function
+    Private Sub modifier_Click(sender As Object, e As EventArgs) Handles modifier.Click
+        Dim indice As Integer
+        indice = ListView1_SelectedIndexChanged(sender, e)
+        If indice <> -1 And indice <> gestion_voiture.current_user Then
+            If Nom.Text <> "" And Email.Text <> "" Then
+                Inscription.user(indice).nom = Nom.Text
+                Inscription.user(indice).email = Email.Text
+                Inscription.user(indice).date_nais = naissance.Value.Date
+                With Inscription.ListView1.Items(indice)
+                    .SubItems(0).Text = Inscription.user(indice).nom
+                    .SubItems(1).Text = Inscription.user(indice).email
+                    .SubItems(2).Text = Inscription.user(indice).date_nais
+                End With
+                With ListView1.Items(indice)
+                    .SubItems(0).Text = Inscription.user(indice).nom
+                    .SubItems(1).Text = Inscription.user(indice).email
+                    .SubItems(2).Text = Inscription.user(indice).date_nais
+                End With
+                erreur.ForeColor = Color.Green
+                erreur.Text = "Modifier avec succes"
+                erreur.Visible = True
+            End If
+        End If
+    End Sub
 End Class
