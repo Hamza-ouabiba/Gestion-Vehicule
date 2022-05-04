@@ -6,7 +6,6 @@
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         compteur_camion = Inscription.taille_camion(current_user)
-        MsgBox(compteur_camion)
         If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
@@ -75,12 +74,14 @@
         autre_.Text = ""
         entree.Text = ""
         sortie.Text = ""
+        erreur.Text = ""
     End Sub
     Sub effacerContenu()
         lista.Items.Clear()
     End Sub
     Private Sub menu_Click(sender As Object, e As EventArgs) Handles menu.Click
         effacerContenu()
+        emptyText()
         gestion_voiture.effacerContenu()
         If Inscription.taille_voiture(gestion_voiture.current_user) > 0 Then
             For i As Integer = 0 To (Inscription.taille_voiture(gestion_voiture.current_user)) - 1
@@ -110,6 +111,7 @@
 
     Private Sub decon_Click(sender As Object, e As EventArgs) Handles decon.Click
         Dim form1 As New Form1()
+        emptyText()
         Me.Hide()
         form1.Show()
     End Sub
@@ -124,8 +126,6 @@
     Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
         Dim indice As Integer
         erreur.Visible = True
-        erreur.Text = "Entre le nom du chaffeur et l'immatriculation a supprimer"
-        erreur.ForeColor = Color.Orange
         If Nom.Text <> "" And matricule.Text <> "" Then
             indice = chercherSuppr(Nom.Text, matricule.Text, compteur_camion)
             If indice <> -1 Then
@@ -134,10 +134,45 @@
                     camion_(Me.current_user, i) = camion_(Me.current_user, i + 1)
                 Next
                 Inscription.taille_camion(Me.current_user) -= 1
+                erreur.Text = "Supprimer avec succes"
+                erreur.ForeColor = Color.Green
+                emptyText()
+            Else
+                erreur.Text = "Utilisateur non trouvée"
+                erreur.ForeColor = Color.Red
             End If
-            erreur.Text = "Supprimer avec succes"
-            erreur.ForeColor = Color.Green
+        Else
+            erreur.Text = "Veuillez inserer les données necessaires"
+            erreur.ForeColor = Color.Red
         End If
     End Sub
+    Private Sub modifier_Click(sender As Object, e As EventArgs) Handles modifier.Click
+        Dim indice As Integer
+        Dim count As Integer
+        erreur.Visible = True
+        erreur.Text = "Entre le nom du chaffeur et l'immatriculation a Modifier"
+        erreur.ForeColor = Color.Orange
+        If Nom.Text <> "" And matricule.Text <> "" Then
+            indice = chercherSuppr(Nom.Text, matricule.Text, compteur_camion)
+            erreur.Text = "Entrer les nouvelles infos : "
+            MsgBox($"sa position est : {indice}")
+            If indice <> -1 Then
+                emptyText()
+                If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
+                    lista.Items(indice).SubItems(0).Text = Nom.Text
+                    lista.Items(indice).SubItems(1).Text = matricule.Text
+                    lista.Items(indice).SubItems(2).Text = tonnage.Text
+                    lista.Items(indice).SubItems(3).Text = peugeot.Text
+                    lista.Items(indice).SubItems(4).Text = entree.Text
+                    lista.Items(indice).SubItems(5).Text = sortie.Text
+                    erreur.Text = "Modifier avec succes"
+                    erreur.ForeColor = Color.Green
+                End If
+            Else
+                erreur.Text = "Aucune donne trouvée"
+                erreur.ForeColor = Color.Red
+            End If
 
+        End If
+    End Sub
 End Class

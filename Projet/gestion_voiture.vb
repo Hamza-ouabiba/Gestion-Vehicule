@@ -5,7 +5,6 @@
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         compteur_voiture = Inscription.taille_voiture(current_user)
-        MsgBox(compteur_voiture)
         If Nom.Text <> "" And matricule.Text <> "" And place.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
@@ -74,12 +73,14 @@
         autre_.Text = ""
         entree.Text = ""
         sortie.Text = ""
+        erreur.Text = ""
     End Sub
     Sub effacerContenu()
         ListView1.Items.Clear()
     End Sub
     Private Sub menu_Click(sender As Object, e As EventArgs) Handles menu.Click
         effacerContenu()
+        emptyText()
         GestionCamion.effacerContenu()
         If Inscription.taille_voiture(Me.current_user) > 0 Then
             For i As Integer = 0 To (Inscription.taille_voiture(Me.current_user)) - 1
@@ -108,6 +109,7 @@
     End Sub
     Private Sub decon_Click(sender As Object, e As EventArgs) Handles decon.Click
         Dim form1 As New Form1()
+        emptyText()
         Me.Hide()
         form1.Show()
     End Sub
@@ -122,8 +124,6 @@
     Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
         Dim indice As Integer
         erreur.Visible = True
-        erreur.Text = "Entre le nom du chaffeur et l'immatriculation a supprimer"
-        erreur.ForeColor = Color.Orange
         If Nom.Text <> "" And matricule.Text <> "" Then
             indice = chercherSuppr(Nom.Text, matricule.Text, compteur_voiture)
             If indice <> -1 Then
@@ -132,9 +132,16 @@
                     voiture(Me.current_user, i) = voiture(Me.current_user, i + 1)
                 Next
                 Inscription.taille_voiture(Me.current_user) -= 1
+                erreur.Text = "Supprimer avec succes"
+                erreur.ForeColor = Color.Green
+                emptyText()
+            Else
+                erreur.Text = "Donne non trouve"
+                erreur.ForeColor = Color.Red
             End If
-            erreur.Text = "Supprimer avec succes"
-            erreur.ForeColor = Color.Green
+        Else
+            erreur.Text = "Veuillez inserer les données necessaires"
+            erreur.ForeColor = Color.Red
         End If
     End Sub
 End Class

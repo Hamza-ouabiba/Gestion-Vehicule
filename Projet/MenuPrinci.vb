@@ -1,7 +1,6 @@
 ﻿Public Class MenuPrinci
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MsgBox($"user : {gestion_voiture.current_user} de taille voiture : {Inscription.taille_voiture(gestion_voiture.current_user)}")
         gestion_voiture.effacerContenu()
         If Inscription.taille_voiture(gestion_voiture.current_user) > 0 Then
             For i As Integer = 0 To (Inscription.taille_voiture(gestion_voiture.current_user)) - 1
@@ -18,7 +17,6 @@
         Me.Hide()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MsgBox($"user : {GestionCamion.current_user} de taille camion : {Inscription.taille_camion(GestionCamion.current_user)}")
         GestionCamion.effacerContenu()
         If Inscription.taille_camion(GestionCamion.current_user) > 0 Then
             For i As Integer = 0 To Inscription.taille_camion(GestionCamion.current_user) - 1
