@@ -21,7 +21,28 @@
         form1.Show()
     End Sub
 
-    Private Sub IconButton2_Click(sender As Object, e As EventArgs)
-
+    Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
+        Dim indice As Integer
+        indice = ListView1_SelectedIndexChanged(sender, e)
+        MsgBox(indice)
+        If indice <> -1 And indice <> gestion_voiture.current_user Then
+            Me.ListView1.Items.RemoveAt(indice)
+            Inscription.user.Remove(Inscription.user(indice))
+            Inscription.ListView1.Items.RemoveAt(indice)
+            Inscription.compteur -= 1
+            erreur.Text = "Supprimer avec succes"
+            erreur.ForeColor = Color.Green
+        End If
     End Sub
+
+    Private Function ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.ItemChecked
+        Try
+            If ListView1.Items.Count > 0 Then
+                Return ListView1.FocusedItem.Index
+            End If
+            Return -1
+        Catch ex As Exception
+            erreur.Text = "Cliquer sur un Item"
+        End Try
+    End Function
 End Class
