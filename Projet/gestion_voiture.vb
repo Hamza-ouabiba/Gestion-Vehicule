@@ -8,7 +8,8 @@
         If Nom.Text <> "" And matricule.Text <> "" And place.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
-                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), peugeot.Text, entree.Text, sortie.Text)
+                    'Instancier un objet de la classe voiture : 
+                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), peugeot.Text, entree.Value.Date, sortie.Value.Date)
                     With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
                         .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
                         .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
@@ -25,7 +26,7 @@
                 End Try
             ElseIf citroen.Checked = True Then
                 Try
-                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), citroen.Text, entree.Text, sortie.Text)
+                    voiture(current_user, compteur_voiture) = New Voiture(Nom.Text, matricule.Text, Convert.ToInt32(place.Text), citroen.Text, entree.Value.Date, sortie.Value.Date)
                     With ListView1.Items.Add(voiture(current_user, compteur_voiture).chauffeur)
                         .SubItems.Add(voiture(current_user, compteur_voiture).immatriculation)
                         .SubItems.Add(Convert.ToInt32(voiture(current_user, compteur_voiture).nombre_place))
@@ -58,7 +59,6 @@
                     erreur.Text = "Le nombre de place ne peut pas etre un texte"
                 End Try
             End If
-
         Else
             erreur.Visible = True
         End If
@@ -113,35 +113,57 @@
         Me.Hide()
         form1.Show()
     End Sub
-    Function chercherSuppr(chauff As String, imma As String, taille As Integer)
-        For i As Integer = 0 To taille - 1
-            If voiture(Me.current_user, i).chauffeur = chauff And voiture(Me.current_user, i).immatriculation = imma Then
-                Return i
-            End If
-        Next
-        Return -1
-    End Function
     Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
         Dim indice As Integer
-        erreur.Visible = True
+        indice = ListView1_SelectedIndexChanged(sender, e)
+        If indice <> -1 Then
+            Me.ListView1.Items.RemoveAt(indice)
+            For i As Integer = indice To compteur_voiture - 2
+                voiture(Me.current_user, i) = voiture(Me.current_user, i + 1)
+            Next
+            Inscription.taille_voiture(Me.current_user) -= 1
+            erreur.Text = "Supprimer avec succes"
+            erreur.ForeColor = Color.Green
+        End If
+    End Sub
+    Private Function ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.ItemChecked
+        If ListView1.Items.Count > 0 Then
+            Return ListView1.FocusedItem.Index
+        End If
+        Return -1
+    End Function
+
+    Private Sub modifier_Click(sender As Object, e As EventArgs) Handles modifier.Click
+        Dim indice As Integer
         If Nom.Text <> "" And matricule.Text <> "" Then
-            indice = chercherSuppr(Nom.Text, matricule.Text, compteur_voiture)
+            indice = ListView1_SelectedIndexChanged(sender, e)
             If indice <> -1 Then
-                Me.ListView1.Items.RemoveAt(indice)
-                For i As Integer = indice To compteur_voiture - 2
-                    voiture(Me.current_user, i) = voiture(Me.current_user, i + 1)
-                Next
-                Inscription.taille_voiture(Me.current_user) -= 1
-                erreur.Text = "Supprimer avec succes"
-                erreur.ForeColor = Color.Green
-                emptyText()
+                If Nom.Text <> "" And matricule.Text <> "" And place.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
+                    voiture(current_user, indice).chauffeur = Nom.Text
+                    voiture(current_user, indice).immatriculation = matricule.Text
+                    voiture(current_user, indice).nombre_place = place.Text
+                    If peugeot.Checked Then
+                        voiture(current_user, indice).marque = peugeot.Text
+                    ElseIf citroen.Checked Then
+                        voiture(current_user, indice).marque = citroen.Text
+                    Else
+                        voiture(current_user, indice).marque = autre_.Text
+                    End If
+                    voiture(current_user, indice).date_entre = entree.Value.Date
+                    voiture(current_user, indice).date_sortie = sortie.Value.Date
+                    With ListView1.Items(indice)
+                        .SubItems(0).Text = voiture(current_user, indice).chauffeur
+                        .SubItems(1).Text = voiture(current_user, indice).immatriculation
+                        .SubItems(2).Text = voiture(current_user, indice).nombre_place
+                        .SubItems(3).Text = voiture(current_user, indice).marque
+                        .SubItems(4).Text = voiture(current_user, indice).date_entre
+                        .SubItems(5).Text = voiture(current_user, indice).date_sortie
+                    End With
+                End If
             Else
-                erreur.Text = "Donne non trouve"
+                erreur.Text = "Aucune donne trouvée"
                 erreur.ForeColor = Color.Red
             End If
-        Else
-            erreur.Text = "Veuillez inserer les données necessaires"
-            erreur.ForeColor = Color.Red
         End If
     End Sub
 End Class

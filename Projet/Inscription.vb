@@ -1,15 +1,16 @@
-﻿Imports System.Text.RegularExpressions
-Public Class Inscription
+﻿Public Class Inscription
     Public user As New LinkedList(Of Utilisateur)
     Public compteur As Integer = 0
     Public taille_voiture(100) As Integer
     Public taille_camion(100) As Integer
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+    'creer un nouveau utilisateur
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         If Nom.Text <> "" And Email.Text <> "" And sexe.Text <> "" And mdp.Text <> "" And mdp2.Text <> "" Then
             If mdp.Text = mdp2.Text Then
                 erreur.Visible = False
+                'instancier un objet de la classe utilisateur : 
                 user.AddLast(New Utilisateur(Nom.Text, Email.Text, sexe.Text, naissance.Value.Date, mdp.Text))
                 With ListView1.Items.Add(user(compteur).nom)
                     .SubItems.Add(user(compteur).email)
@@ -34,15 +35,7 @@ Public Class Inscription
             erreur.Text = "Veuillez entrer les champs requis"
         End If
     End Sub
-    Sub testRegex(password As String)
-        Dim expression As String = "[a-z]"
-        Dim test As New Regex(expression)
-        If test.IsMatch(expression) Then
-            MsgBox("contains data")
-        Else
-            MsgBox("reessayer")
-        End If
-    End Sub
+
     Sub emptyText()
         Nom.Text = ""
         Email.Text = ""

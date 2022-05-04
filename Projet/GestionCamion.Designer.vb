@@ -80,9 +80,9 @@ Partial Class GestionCamion
         Me.lista.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lista.ForeColor = System.Drawing.SystemColors.Menu
         Me.lista.FullRowSelect = True
-        Me.lista.Location = New System.Drawing.Point(69, 0)
+        Me.lista.Location = New System.Drawing.Point(0, 3)
         Me.lista.Name = "lista"
-        Me.lista.Size = New System.Drawing.Size(901, 774)
+        Me.lista.Size = New System.Drawing.Size(1008, 799)
         Me.lista.TabIndex = 0
         Me.lista.UseCompatibleStateImageBehavior = False
         Me.lista.View = System.Windows.Forms.View.Details
@@ -90,32 +90,32 @@ Partial Class GestionCamion
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Nom Chauffeur"
-        Me.ColumnHeader1.Width = 150
+        Me.ColumnHeader1.Width = 170
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Immatriculation"
-        Me.ColumnHeader2.Width = 150
+        Me.ColumnHeader2.Width = 170
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Tonnage"
-        Me.ColumnHeader3.Width = 150
+        Me.ColumnHeader3.Width = 170
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Marque"
-        Me.ColumnHeader4.Width = 150
+        Me.ColumnHeader4.Width = 170
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Date entree"
-        Me.ColumnHeader5.Width = 150
+        Me.ColumnHeader5.Width = 170
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Date de sortie"
-        Me.ColumnHeader6.Width = 150
+        Me.ColumnHeader6.Width = 170
         '
         'Panel6
         '
@@ -147,7 +147,7 @@ Partial Class GestionCamion
         Me.Panel6.Controls.Add(Me.IconPictureBox2)
         Me.Panel6.Location = New System.Drawing.Point(22, 12)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1617, 845)
+        Me.Panel6.Size = New System.Drawing.Size(1765, 802)
         Me.Panel6.TabIndex = 33
         '
         'decon
@@ -506,7 +506,7 @@ Partial Class GestionCamion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(1723, 823)
+        Me.ClientSize = New System.Drawing.Size(1686, 840)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "GestionCamion"

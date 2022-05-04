@@ -9,7 +9,8 @@
         If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
             If peugeot.Checked = True Then
                 Try
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), peugeot.Text, entree.Text, sortie.Text)
+                    'Instancier un objet de la classe camion : 
+                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), peugeot.Text, entree.Value.Date, sortie.Value.Date)
                     With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
                         .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
                         .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
@@ -26,7 +27,7 @@
                 End Try
             ElseIf citroen.Checked = True Then
                 Try
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), citroen.Text, entree.Text, sortie.Text)
+                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), citroen.Text, entree.Value.Date, sortie.Value.Date)
                     With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
                         .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
                         .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
@@ -43,7 +44,7 @@
                 End Try
             Else
                 Try
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), autre_.Text, entree.Text, sortie.Text)
+                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), autre_.Text, entree.Value.Date, sortie.Value.Date)
                     With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
                         .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
                         .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
@@ -124,55 +125,56 @@
         Return -1
     End Function
     Private Sub supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
-        Dim indice As Integer
-        erreur.Visible = True
-        If Nom.Text <> "" And matricule.Text <> "" Then
-            indice = chercherSuppr(Nom.Text, matricule.Text, compteur_camion)
-            If indice <> -1 Then
-                Me.lista.Items.RemoveAt(indice)
-                For i As Integer = indice To compteur_camion - 2
-                    camion_(Me.current_user, i) = camion_(Me.current_user, i + 1)
-                Next
-                Inscription.taille_camion(Me.current_user) -= 1
-                erreur.Text = "Supprimer avec succes"
-                erreur.ForeColor = Color.Green
-                emptyText()
-            Else
-                erreur.Text = "Utilisateur non trouvée"
-                erreur.ForeColor = Color.Red
-            End If
-        Else
-            erreur.Text = "Veuillez inserer les données necessaires"
-            erreur.ForeColor = Color.Red
+        Dim indice As Integer = lista_SelectedIndexChanged(sender, e)
+        If indice <> -1 Then
+            Me.lista.Items.RemoveAt(indice)
+            For i As Integer = indice To compteur_camion - 2
+                camion_(Me.current_user, i) = camion_(Me.current_user, i + 1)
+            Next
+            Inscription.taille_camion(Me.current_user) -= 1
+            erreur.Visible = True
+            erreur.Text = "Supprimer avec succes"
+            erreur.ForeColor = Color.Green
         End If
     End Sub
     Private Sub modifier_Click(sender As Object, e As EventArgs) Handles modifier.Click
         Dim indice As Integer
-        Dim count As Integer
-        erreur.Visible = True
-        erreur.Text = "Entre le nom du chaffeur et l'immatriculation a Modifier"
-        erreur.ForeColor = Color.Orange
         If Nom.Text <> "" And matricule.Text <> "" Then
-            indice = chercherSuppr(Nom.Text, matricule.Text, compteur_camion)
-            erreur.Text = "Entrer les nouvelles infos : "
-            MsgBox($"sa position est : {indice}")
+            indice = lista_SelectedIndexChanged(sender, e)
             If indice <> -1 Then
-                emptyText()
                 If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
-                    lista.Items(indice).SubItems(0).Text = Nom.Text
-                    lista.Items(indice).SubItems(1).Text = matricule.Text
-                    lista.Items(indice).SubItems(2).Text = tonnage.Text
-                    lista.Items(indice).SubItems(3).Text = peugeot.Text
-                    lista.Items(indice).SubItems(4).Text = entree.Text
-                    lista.Items(indice).SubItems(5).Text = sortie.Text
-                    erreur.Text = "Modifier avec succes"
-                    erreur.ForeColor = Color.Green
+                    camion_(current_user, indice).chauffeur = Nom.Text
+                    camion_(current_user, indice).immatriculation = matricule.Text
+                    camion_(current_user, indice).tonnage = tonnage.Text
+                    If peugeot.Checked Then
+                        camion_(current_user, indice).marque = peugeot.Text
+                    ElseIf citroen.Checked Then
+                        camion_(current_user, indice).marque = citroen.Text
+                    Else
+                        camion_(current_user, indice).marque = autre_.Text
+                    End If
+                    camion_(current_user, indice).date_entre = entree.Value.Date
+                    camion_(current_user, indice).date_sortie = sortie.Value.Date
+                    With lista.Items(indice)
+                        .SubItems(0).Text = camion_(current_user, indice).chauffeur
+                        .SubItems(1).Text = camion_(current_user, indice).immatriculation
+                        .SubItems(2).Text = camion_(current_user, indice).tonnage
+                        .SubItems(3).Text = camion_(current_user, indice).marque
+                        .SubItems(4).Text = camion_(current_user, indice).date_entre
+                        .SubItems(5).Text = camion_(current_user, indice).date_sortie
+                    End With
                 End If
             Else
                 erreur.Text = "Aucune donne trouvée"
                 erreur.ForeColor = Color.Red
             End If
-
         End If
     End Sub
+
+    Private Function lista_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lista.ItemChecked
+        If lista.Items.Count > 0 Then
+            Return lista.FocusedItem.Index
+        End If
+        Return -1
+    End Function
 End Class

@@ -70,7 +70,7 @@ Partial Class gestion_voiture
         Me.Panel7.Controls.Add(Me.ListView1)
         Me.Panel7.Location = New System.Drawing.Point(672, 18)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(893, 707)
+        Me.Panel7.Size = New System.Drawing.Size(1358, 707)
         Me.Panel7.TabIndex = 32
         '
         'ListView1
@@ -80,9 +80,9 @@ Partial Class gestion_voiture
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ListView1.ForeColor = System.Drawing.SystemColors.Menu
         Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.Location = New System.Drawing.Point(3, 0)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(893, 727)
+        Me.ListView1.Size = New System.Drawing.Size(994, 779)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -90,32 +90,32 @@ Partial Class gestion_voiture
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Nom Chauffeur"
-        Me.ColumnHeader1.Width = 150
+        Me.ColumnHeader1.Width = 170
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Immatriculation"
-        Me.ColumnHeader2.Width = 150
+        Me.ColumnHeader2.Width = 170
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Nombre de place"
-        Me.ColumnHeader3.Width = 150
+        Me.ColumnHeader3.Width = 170
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Marque"
-        Me.ColumnHeader4.Width = 150
+        Me.ColumnHeader4.Width = 170
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Date entree"
-        Me.ColumnHeader5.Width = 150
+        Me.ColumnHeader5.Width = 170
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Date de sortie"
-        Me.ColumnHeader6.Width = 150
+        Me.ColumnHeader6.Width = 170
         '
         'Panel6
         '
@@ -147,7 +147,7 @@ Partial Class gestion_voiture
         Me.Panel6.Controls.Add(Me.IconPictureBox2)
         Me.Panel6.Location = New System.Drawing.Point(28, 18)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(608, 727)
+        Me.Panel6.Size = New System.Drawing.Size(608, 779)
         Me.Panel6.TabIndex = 31
         '
         'decon
@@ -505,7 +505,7 @@ Partial Class gestion_voiture
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1599, 798)
+        Me.ClientSize = New System.Drawing.Size(1686, 780)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "gestion_voiture"
