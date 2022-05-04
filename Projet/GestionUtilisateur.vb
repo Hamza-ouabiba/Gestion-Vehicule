@@ -20,4 +20,8 @@
         Me.Hide()
         form1.Show()
     End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
