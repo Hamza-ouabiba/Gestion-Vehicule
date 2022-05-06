@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -204,7 +205,12 @@ Partial Class Form1
         Me.Controls.Add(Me.IconPictureBox2)
         Me.Controls.Add(Me.IconPictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MdiChildrenMinimizedAnchorBottom = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Connexion"
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

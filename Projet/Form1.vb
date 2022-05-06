@@ -8,9 +8,6 @@ Public Class Form1
             If testeLogin(Inscription.user,
                           Nom.Text,
                           mdp.Text, Inscription.compteur) <> -1 Then
-                erreur.Visible = True
-                erreur.ForeColor = Color.Green
-                erreur.Text = "Connexion avec success"
                 Sleep(1000)
                 Me.Hide()
                 gestion_voiture.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)

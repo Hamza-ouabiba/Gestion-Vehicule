@@ -51,21 +51,25 @@
         Me.Hide()
     End Sub
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
-        mdp.UseSystemPasswordChar = False
+        mdp.UseSystemPasswordChar = True
         cacher.Visible = True
+        IconButton2.Visible = False
     End Sub
     Private Sub cacher_Click(sender As Object, e As EventArgs) Handles cacher.Click
-        mdp.UseSystemPasswordChar = True
+        mdp.UseSystemPasswordChar = False
         cacher.Visible = False
+        IconButton2.Visible = True
     End Sub
 
     Private Sub cacher2_Click(sender As Object, e As EventArgs) Handles cacher2.Click
-        mdp2.UseSystemPasswordChar = True
+        mdp2.UseSystemPasswordChar = False
         cacher2.Visible = False
+        IconButton3.Visible = True
     End Sub
 
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
-        mdp2.UseSystemPasswordChar = False
+        mdp2.UseSystemPasswordChar = True
         cacher2.Visible = True
+        IconButton3.Visible = False
     End Sub
 End Class

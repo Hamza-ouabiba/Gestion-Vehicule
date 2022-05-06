@@ -103,12 +103,11 @@ Partial Class Inscription
         Me.cacher2.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.cacher2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.cacher2.IconSize = 30
-        Me.cacher2.Location = New System.Drawing.Point(444, 467)
+        Me.cacher2.Location = New System.Drawing.Point(443, 464)
         Me.cacher2.Name = "cacher2"
         Me.cacher2.Size = New System.Drawing.Size(28, 30)
         Me.cacher2.TabIndex = 58
         Me.cacher2.UseVisualStyleBackColor = True
-        Me.cacher2.Visible = False
         '
         'cacher
         '
@@ -118,12 +117,11 @@ Partial Class Inscription
         Me.cacher.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.cacher.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.cacher.IconSize = 30
-        Me.cacher.Location = New System.Drawing.Point(444, 403)
+        Me.cacher.Location = New System.Drawing.Point(444, 405)
         Me.cacher.Name = "cacher"
         Me.cacher.Size = New System.Drawing.Size(28, 30)
         Me.cacher.TabIndex = 57
         Me.cacher.UseVisualStyleBackColor = True
-        Me.cacher.Visible = False
         '
         'Panel3
         '
@@ -149,6 +147,7 @@ Partial Class Inscription
         Me.IconButton3.Size = New System.Drawing.Size(29, 32)
         Me.IconButton3.TabIndex = 55
         Me.IconButton3.UseVisualStyleBackColor = False
+        Me.IconButton3.Visible = False
         '
         'IconButton2
         '
@@ -166,6 +165,7 @@ Partial Class Inscription
         Me.IconButton2.Size = New System.Drawing.Size(29, 32)
         Me.IconButton2.TabIndex = 54
         Me.IconButton2.UseVisualStyleBackColor = False
+        Me.IconButton2.Visible = False
         '
         'erreur
         '

@@ -1,0 +1,7 @@
+D:\Apex legends\Projet\Projet.exe
+D:\Apex legends\Projet\Projet.dll
+D:\Apex legends\Projet\Projet.deps.json
+D:\Apex legends\Projet\Projet.runtimeconfig.json
+D:\Apex legends\Projet\Projet.pdb
+D:\Apex legends\Projet\FontAwesome.Sharp.dll
+D:\Apex legends\Projet\Guna.UI2.dll

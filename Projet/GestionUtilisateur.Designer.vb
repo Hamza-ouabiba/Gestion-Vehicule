@@ -58,9 +58,9 @@ Partial Class GestionUtilisateur
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ListView1.ForeColor = System.Drawing.SystemColors.Menu
         Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(782, 42)
+        Me.ListView1.Location = New System.Drawing.Point(641, 33)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1070, 741)
+        Me.ListView1.Size = New System.Drawing.Size(1081, 741)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -88,6 +88,8 @@ Partial Class GestionUtilisateur
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.modifier)
+        Me.Panel6.Controls.Add(Me.decon)
+        Me.Panel6.Controls.Add(Me.menu)
         Me.Panel6.Controls.Add(Me.erreur)
         Me.Panel6.Controls.Add(Me.supprimer)
         Me.Panel6.Controls.Add(Me.Label1)
@@ -102,7 +104,7 @@ Partial Class GestionUtilisateur
         Me.Panel6.Controls.Add(Me.Email)
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.naissance)
-        Me.Panel6.Location = New System.Drawing.Point(105, 42)
+        Me.Panel6.Location = New System.Drawing.Point(27, 33)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(608, 764)
         Me.Panel6.TabIndex = 67
@@ -115,7 +117,7 @@ Partial Class GestionUtilisateur
         Me.modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modifier.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.modifier.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.modifier.Location = New System.Drawing.Point(309, 594)
+        Me.modifier.Location = New System.Drawing.Point(336, 634)
         Me.modifier.Name = "modifier"
         Me.modifier.Size = New System.Drawing.Size(172, 54)
         Me.modifier.TabIndex = 55
@@ -142,7 +144,7 @@ Partial Class GestionUtilisateur
         Me.supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.supprimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.supprimer.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.supprimer.Location = New System.Drawing.Point(141, 594)
+        Me.supprimer.Location = New System.Drawing.Point(132, 634)
         Me.supprimer.Name = "supprimer"
         Me.supprimer.Size = New System.Drawing.Size(161, 54)
         Me.supprimer.TabIndex = 48
@@ -303,7 +305,7 @@ Partial Class GestionUtilisateur
         Me.menu.IconColor = System.Drawing.Color.Black
         Me.menu.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.menu.IconSize = 25
-        Me.menu.Location = New System.Drawing.Point(12, 21)
+        Me.menu.Location = New System.Drawing.Point(5, 3)
         Me.menu.Name = "menu"
         Me.menu.Padding = New System.Windows.Forms.Padding(0, 4, 0, 0)
         Me.menu.Size = New System.Drawing.Size(39, 39)
@@ -318,7 +320,7 @@ Partial Class GestionUtilisateur
         Me.decon.IconChar = FontAwesome.Sharp.IconChar.DoorOpen
         Me.decon.IconColor = System.Drawing.Color.Black
         Me.decon.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.decon.Location = New System.Drawing.Point(60, 21)
+        Me.decon.Location = New System.Drawing.Point(50, 3)
         Me.decon.Name = "decon"
         Me.decon.Size = New System.Drawing.Size(39, 39)
         Me.decon.TabIndex = 66
@@ -329,10 +331,8 @@ Partial Class GestionUtilisateur
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1864, 834)
+        Me.ClientSize = New System.Drawing.Size(1764, 834)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.decon)
-        Me.Controls.Add(Me.menu)
         Me.Controls.Add(Me.ListView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GestionUtilisateur"
