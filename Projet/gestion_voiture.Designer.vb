@@ -509,6 +509,7 @@ Partial Class gestion_voiture
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "gestion_voiture"
+        Me.ShowIcon = False
         Me.Text = "gestion_voiture"
         Me.Panel7.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)

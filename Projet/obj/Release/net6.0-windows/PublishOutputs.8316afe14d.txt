@@ -1,0 +1,7 @@
+D:\Apex legends\GestionParking\Projet.exe
+D:\Apex legends\GestionParking\Projet.dll
+D:\Apex legends\GestionParking\Projet.deps.json
+D:\Apex legends\GestionParking\Projet.runtimeconfig.json
+D:\Apex legends\GestionParking\Projet.pdb
+D:\Apex legends\GestionParking\FontAwesome.Sharp.dll
+D:\Apex legends\GestionParking\Guna.UI2.dll

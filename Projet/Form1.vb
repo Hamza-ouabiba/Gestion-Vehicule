@@ -3,12 +3,11 @@ Public Class Form1
     Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
     Private Sub Connexion_Click(sender As Object, e As EventArgs) Handles Connexion.Click
         Dim menu As New MenuPrinci()
-        erreur.Visible = False
         If Nom.Text <> "" And mdp.Text <> "" And Inscription.compteur > 0 Then
             If testeLogin(Inscription.user,
                           Nom.Text,
                           mdp.Text, Inscription.compteur) <> -1 Then
-                Sleep(1000)
+                erreur.Visible = False
                 Me.Hide()
                 gestion_voiture.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)
                 GestionCamion.current_user = testeLogin(Inscription.user, Nom.Text, mdp.Text, Inscription.compteur)

@@ -510,6 +510,7 @@ Partial Class GestionCamion
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "GestionCamion"
+        Me.ShowIcon = False
         Me.Text = "GestionCamion"
         Me.Panel7.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)

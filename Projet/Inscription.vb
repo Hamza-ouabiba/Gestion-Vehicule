@@ -1,4 +1,5 @@
-﻿Public Class Inscription
+﻿Imports System.Text.RegularExpressions
+Public Class Inscription
     Public user As New LinkedList(Of Utilisateur)
     Public compteur As Integer = 0
     Public taille_voiture(100) As Integer
@@ -11,19 +12,26 @@
             If mdp.Text = mdp2.Text Then
                 erreur.Visible = False
                 'instancier un objet de la classe utilisateur : 
-                user.AddLast(New Utilisateur(Nom.Text, Email.Text, sexe.Text, naissance.Value.Date, mdp.Text))
-                With ListView1.Items.Add(user(compteur).nom)
-                    .SubItems.Add(user(compteur).email)
-                    .SubItems.Add(user(compteur).sexe)
-                    .SubItems.Add(user(compteur).date_nais)
-                End With
-                erreur.Visible = True
-                erreur.Text = "Compte Creer avec succees"
-                erreur.ForeColor = Color.Green
-                Sleep(1000)
-                emptyText()
-                erreur.Visible = False
-                compteur += 1
+                If testRegex(mdp.Text) = 1 Then
+                    erreur.Visible = False
+                    user.AddLast(New Utilisateur(Nom.Text, Email.Text, sexe.Text, naissance.Value.Date, mdp.Text))
+                    With ListView1.Items.Add(user(compteur).nom)
+                        .SubItems.Add(user(compteur).email)
+                        .SubItems.Add(user(compteur).sexe)
+                        .SubItems.Add(user(compteur).date_nais)
+                    End With
+                    erreur.Visible = True
+                    erreur.Text = "Compte Creer avec succees"
+                    erreur.ForeColor = Color.Green
+                    Sleep(1000)
+                    emptyText()
+                    erreur.Visible = False
+                    compteur += 1
+                Else
+                    erreur.ForeColor = Color.Red
+                    erreur.Visible = True
+                    erreur.Text = "Veuillez Creez un autre mot de passe {Au moins 5 caracteres}"
+                End If
             Else
                 erreur.Visible = True
                 erreur.Text = "Mot de passe Erronne"
@@ -35,7 +43,14 @@
             erreur.Text = "Veuillez entrer les champs requis"
         End If
     End Sub
-
+    'Pour les expressions régulières: tester sur le mot de passe 
+    Function testRegex(password As String)
+        Dim rege As New Regex("[a-zA-Z0-9]{5}")
+        If rege.IsMatch(password) Then
+            Return 1
+        End If
+        Return 0
+    End Function
     Sub emptyText()
         Nom.Text = ""
         Email.Text = ""

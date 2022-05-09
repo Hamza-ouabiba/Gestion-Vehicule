@@ -6,63 +6,69 @@
     Private Sub enregistrer_Click(sender As Object, e As EventArgs) Handles enregistrer.Click
         erreur.Visible = False
         compteur_camion = Inscription.taille_camion(current_user)
-        If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
-            If peugeot.Checked = True Then
-                Try
-                    'Instancier un objet de la classe camion : 
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), peugeot.Text, entree.Value.Date, sortie.Value.Date)
-                    With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
-                        .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
-                        .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
-                        .SubItems.Add(camion_(current_user, compteur_camion).marque)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
-                    End With
-                    emptyText()
-                    compteur_camion += 1
-                    Inscription.taille_camion(current_user) = compteur_camion
-                Catch ex As Exception
-                    erreur.Visible = True
-                    erreur.Text = "Le tonnage ne peut pas etre un texte"
-                End Try
-            ElseIf citroen.Checked = True Then
-                Try
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), citroen.Text, entree.Value.Date, sortie.Value.Date)
-                    With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
-                        .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
-                        .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
-                        .SubItems.Add(camion_(current_user, compteur_camion).marque)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
-                    End With
-                    emptyText()
-                    compteur_camion += 1
-                    Inscription.taille_camion(current_user) = compteur_camion
-                Catch ex As Exception
-                    erreur.Visible = True
-                    erreur.Text = "Le tonnage ne peut pas etre un texte"
-                End Try
-            Else
-                Try
-                    camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), autre_.Text, entree.Value.Date, sortie.Value.Date)
-                    With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
-                        .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
-                        .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
-                        .SubItems.Add(camion_(current_user, compteur_camion).marque)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
-                        .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
-                    End With
-                    emptyText()
-                    compteur_camion += 1
-                    Inscription.taille_camion(current_user) = compteur_camion
-                Catch ex As Exception
-                    erreur.Visible = True
-                    erreur.Text = "Le tonnage ne peut pas etre un texte"
-                End Try
-            End If
+        If compteur_camion < 100 Then
+            If Nom.Text <> "" And matricule.Text <> "" And tonnage.Text <> "" And (peugeot.Text <> "" Or citroen.Text <> "" Or autre.Text <> "") And entree.Text <> "" And sortie.Text <> "" Then
+                If peugeot.Checked = True Then
+                    Try
+                        'Instancier un objet de la classe camion : 
+                        camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), peugeot.Text, entree.Value.Date, sortie.Value.Date)
+                        With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
+                            .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
+                            .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
+                            .SubItems.Add(camion_(current_user, compteur_camion).marque)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
+                        End With
+                        emptyText()
+                        compteur_camion += 1
+                        Inscription.taille_camion(current_user) = compteur_camion
+                    Catch ex As Exception
+                        erreur.Visible = True
+                        erreur.Text = "Le tonnage ne peut pas etre un texte"
+                    End Try
+                ElseIf citroen.Checked = True Then
+                    Try
+                        camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), citroen.Text, entree.Value.Date, sortie.Value.Date)
+                        With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
+                            .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
+                            .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
+                            .SubItems.Add(camion_(current_user, compteur_camion).marque)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
+                        End With
+                        emptyText()
+                        compteur_camion += 1
+                        Inscription.taille_camion(current_user) = compteur_camion
+                    Catch ex As Exception
+                        erreur.Visible = True
+                        erreur.Text = "Le tonnage ne peut pas etre un texte"
+                    End Try
+                Else
+                    Try
+                        camion_(current_user, compteur_camion) = New Camion(Nom.Text, matricule.Text, Convert.ToInt32(tonnage.Text), autre_.Text, entree.Value.Date, sortie.Value.Date)
+                        With lista.Items.Add(camion_(current_user, compteur_camion).chauffeur)
+                            .SubItems.Add(camion_(current_user, compteur_camion).immatriculation)
+                            .SubItems.Add(Convert.ToInt32(camion_(current_user, compteur_camion).tonnage))
+                            .SubItems.Add(camion_(current_user, compteur_camion).marque)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_entre)
+                            .SubItems.Add(camion_(current_user, compteur_camion).date_sortie)
+                        End With
+                        emptyText()
+                        compteur_camion += 1
+                        Inscription.taille_camion(current_user) = compteur_camion
+                    Catch ex As Exception
+                        erreur.Visible = True
+                        erreur.Text = "Le tonnage ne peut pas etre un texte"
+                    End Try
+                End If
 
+            Else
+                erreur.Visible = True
+            End If
         Else
+            erreur.Text = "Stockage insuffisant"
             erreur.Visible = True
+            erreur.ForeColor = Color.Red
         End If
     End Sub
     Sub emptyText()
